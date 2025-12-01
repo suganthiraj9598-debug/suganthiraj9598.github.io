@@ -1,54 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kishanth Crackers | Wholesale & Retail</title>
-  <style>
-    body {
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: red;
-      padding: 20px;
-      font-size: 26px;
-      font-weight: bold;
-      color: yellow;
-    }
-    .btn {
-      background: yellow;
-      color: red;
-      padding: 12px 18px;
-      font-size: 20px;
-      margin: 15px;
-      display: inline-block;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #ccc;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kishanth Crackers — Order Online (Vembakottai)</title>
+<meta name="description" content="Kishanth Crackers - Best Crackers at Best Price. Order Online - Delivery Available. WhatsApp: 7448489142" />
+<style>
+  :root{
+    --bg:#0f0f0f;
+    --card:#1a1a1a;
+    --accent:#ff2f2f; /* red */
+    --accent2:#ffd34d; /* yellow */
+    --muted:#bfbfbf;
+    --success:#25D366;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:#fff;font-family:Arial,system-ui,-apple-system,"Noto Sans Tamil",sans-serif}
+  header{background:linear-gradient(90deg,var(--accent),var(--accent2));padding:18px 14px;text-align:center}
+  header h1{margin:0;font-size:20px;letter-spacing:0.6px}
+  header p{margin:6px 0 0;font-size:13px;color:#111;font-weight:700}
+  .banner{width:100%;display:block;max-height:220px;object-fit:cover;border-bottom:6px solid #ffd34d}
+  .wrap{max-width:980px;margin:16px auto;padding:12px}
+  .top-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .tag{background:#111;padding:8px 10px;border-radius:8px;border:1px solid #222}
+  .tag strong{color:var(--accent2);display:block;font-size:14px}
+  .tag small{color:var(--muted)}
+  .checkout-bar{margin-top:12px;background:linear-gradient(180deg,#0e0e0e,#141414);border:1px solid #222;padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .totals{flex:1}
+  .totals div{font-size:14px;color:var(--muted)}
+  .totals .big{font-size:20px;font-weight:700;color:var(--accent2);margin-top:6px}
+  .gpay{background:#041f6b;padding:8px 12px;border-radius:8px;color:var(--accent2);font-weight:700}
+  .wh-btn{background:var(--success);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none}
+  .note{font-size:12px;color:var(--muted);margin-top:6px}
+  main{margin-top:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+  .card{background:var(--card);padding:12px;border-radius:10px;border:1px solid #222}
+  .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+  .card h3{margin:8px 0 4px;font-size:16px;color:var(--accent2)}
+  .card p{margin:0;font-size:13px;color:var(--muted)}
+  .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+  .price{color:var(--accent);font-weight:800}
+  .qty{display:flex;gap:6px;align-items:center}
+  .qty input{width:64px;padding:6px;border-radius:6px;border:1px solid #333;background:#0b0b0b;color:#fff;text-align:center}
+  .subtotal{font-weight:700;color:var(--accent2)}
+  footer{margin-top:18px;padding:16px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #111}
+  .floating-wh{position:fixed;right:14px;bottom:14px;background:var(--success);color:#fff;padding:14px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.5);z-index:999;display:flex;align-items:center;justify-content:center;text-decoration:none}
+  .min-order{color:#ffcc66;font-weight:700}
+  @media(max-width:520px){
+    .card img{height:140px}
+    .qty input{width:52px}
+    header h1{font-size:18px}
+  }
+</style>
 </head>
 <body>
 
-<header>🎆 Kishanth Crackers 🎇</header>
+<header>
+  <h1>🔥 Kishanth Crackers 🔥</h1>
+  <p>Order Online – Delivery Available</p>
+</header>
 
-<h2>Wholesale & Retail - Best Price in Vembakottai🔥</h2>
+<img class="banner" src="https://picsum.photos/seed/kishanth-banner/1200/400" alt="Kishanth Crackers Banner">
 
-<a class="btn" href="https://wa.me/7448489142">📞 WhatsApp Order</a>
+<div class="wrap">
+
+  <div class="top-row">
+    <div class="tag">
+      <strong>Best Price • Best Blast!</strong>
+      <small>Minimum Order ₹2500 • GPay: 7448489142</small>
+    </div>
+
+    <div class="checkout-bar" style="flex:1">
+      <div class="totals">
+        <div id="countItems">Total Items: 0</div>
+        <div class="big" id="grandTotal">Total Amount: ₹0</div>
+        <div class="note">Minimum order: <span class="min-order">₹2500</span></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+        <a id="checkoutBtn" class="wh-btn" href="#" onclick="checkout()" style="pointer-events:none;opacity:0.6">📲 Checkout on WhatsApp</a>
+        <div class="gpay">GPay: 7448489142</div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <h2 style="margin:14px 0 8px;color:var(--accent2)">Products</h2>
+
+    <div class="grid" id="productGrid">
+      <!-- Product cards appended by JS -->
+    </div>
+  </main>
+
+  <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+    <strong>Note:</strong> Delivery available in and around Vembakottai. For bulk orders and special combos contact on WhatsApp.
+  </div>
+
+</div>
 
 <footer>
-  © 2024 Kishanth Crackers. All Rights Reserved 🎉
+  <div>Owner: Prashanth • WhatsApp: 7448489142 • Address: 3/61, South Street, Vembakottai</div>
+  <div style="margin-top:8px">© <span id="year"></span> Kishanth Crackers</div>
 </footer>
 
+<a class="floating-wh" id="floatBtn" href="https://wa.me/917448489142" title="Order on WhatsApp">💬</a>
+
+<script>
+/*
+  Product data array:
+  Each item: { id, category, name_ta, name_en, pack, price, imgSeed }
+  (IMG uses picsum seed so each product gets unique placeholder)
+*/
+const products = [
+  // Sparklers
+  {id:'p1',category:'Sparklers',name_ta:'கம்பி மத்தாப்பு (12CM - Electric)',name_en:'12CM Electric Sparklers',pack:'1Box - 10Pcs',price:200,imgSeed:'sparklers1'},
+  {id:'p2',category:'Sparklers',name_ta:'12CM Crackling Sparklers',name_en:'12CM Crackling Sparklers',pack:'1Box - 10Pcs',price:220,imgSeed:'sparklers2'},
+  {id:'p3',category:'Sparklers',name_ta:'12CM Green Sparklers',name_en:'12CM Green Sparklers',pack:'1Box - 10Pcs',price:240,imgSeed:'sparklers3'},
+  // Color Matches
+  {id:'p10',category:'Color Matches',name_ta:'Super Deluxe (10in1)',name_en:'Super Deluxe (10in1)',pack:'1Box - 10Boxes',price:1000,imgSeed:'colormatch1'},
+  {id:'p11',category:'Color Matches',name_ta:'Classic (5in1)',name_en:'Classic (5in1)',pack:'1Box - 10Boxes',price:1600,imgSeed:'colormatch2'},
+  // Sound Crackers
+  {id:'p20',category:'Sound Crackers',name_ta:'2 3/4 Kuruvi',name_en:'2 3/4 Kuruvi',pack:'1Pkt',price:100,imgSeed:'sound1'},
+  {id:'p21',category:'Sound Crackers',name_ta:'3.5 Lakshmi',name_en:'3.5 Lakshmi',pack:'1Pkt',price:150,imgSeed:'sound2'},
+  {id:'p22',category:'Sound Crackers',name_ta:'4inch Lakshmi (Machine Fuse)',name_en:'4inch Lakshmi',pack:'1Pkt',price:300,imgSeed:'sound3'},
+  // Flower Pots
+  {id:'p30',category:'Flower Pots',name_ta:'Flower Pots Big',name_en:'Flower Pots Big',pack:'1Box - 10Pcs',price:700,imgSeed:'flower1'},
+  {id:'p31',category:'Flower Pots',name_ta:'Color Koti',name_en:'Color Koti',pack:'1Box - 10Pcs',price:1700,imgSeed:'flower2'},
+  // Ground Chakkar
+  {id:'p40',category:'Ground Chakkar',name_ta:'Ground Chakkar Special',name_en:'Ground Chakkar Special',pack:'1Box - 10Pcs',price:700,imgSeed:'ground1'},
+  {id:'p41',category:'Ground Chakkar',name_ta:'Ground Chakkar Asoka - ASOK',name_en:'Ground Chakkar Asoka',pack:'1Box - 10Pcs',price:1600,imgSeed:'ground2'},
+  // Fancy Chakkars
+  {id:'p50',category:'Fancy Chakkars',name_ta:'Spin Master mix - INF',name_en:'Spin Master Mix',pack:'1Box - 10Pcs',price:1300,imgSeed:'fancy1'},
+  // Bombs
+  {id:'p60',category:'Bombs',name_ta:'Classic Bomb',name_en:'Classic Bomb',pack:'1Box - 10Pcs',price:1100,imgSeed:'bomb1'},
+  {id:'p61',category:'Bombs',name_ta:'Dinosaur Bomb - SRI VIJAY',name_en:'Dinosaur Bomb',pack:'1Box - 10Pcs',price:1850,imgSeed:'bomb2'},
+  // Kids Special
+  {id:'p70',category:'Kids Special',name_ta:'Money in the Bank',name_en:'Money in the Bank',pack:'1Box - 3Pcs',price:1200,imgSeed:'kids1'},
+  {id:'p71',category:'Kids Special',name_ta:'Helicopter',name_en:'Helicopter',pack:'1Box - 5Pcs',price:1000,imgSeed:'kids2'},
+  // Night Attractions
+  {id:'p80',category:'Night Attractions',name_ta:'Tricolor',name_en:'Tricolor',pack:'1Box - 5Pcs',price:2500,imgSeed:'night1'},
+  {id:'p81',category:'Night Attractions',name_ta:'Golden Rain',name_en:'Golden Rain',pack:'1Box - 5Pcs',price:900,imgSeed:'night2'},
+  // Rockets
+  {id:'p90',category:'Rockets',name_ta:'Rocket Bomb',name_en:'Rocket Bomb',pack:'1Box - 10PCS',price:600,imgSeed:'rocket1'},
+  {id:'p91',category:'Rockets',name_ta:'Sky shot (Chotta Fancy)',name_en:'Sky Shot',pack:'1Box',price:350,imgSeed:'rocket2'},
+  // Premium / Cakes
+  {id:'p100',category:'Premium',name_ta:'30 Shots',name_en:'30 Shots Cake',pack:'1Box',price:4000,imgSeed:'cake1'},
+  {id:'p101',category:'Premium',name_ta:'120 Shots',name_en:'120 Shots',pack:'1Box',price:15000,imgSeed:'cake2'},
+  // add more as needed...
+];
+
+// helper: format rupee
+function formatRupee(n){
+  // digit-by-digit safe formatting
+  const s = Math.round(n).toString().split('').reverse().join('');
+  const parts = [];
+  for(let i=0;i<s.length;i++){
+    parts.push(s[i]);
+    if(i===2 || (i>2 && (i-2)%2===1)) parts.push(',');
+  }
+  return parts.join('').split('').reverse().join('').replace(/^,/, '') ;
+}
+
+// Build product grid
+const grid = document.getElementById('productGrid');
+
+products.forEach(prod=>{
+  const card = document.createElement('div');
+  card.className='card';
+  const imgUrl = `https://picsum.photos/seed/${encodeURIComponent(prod.imgSeed)}/800/600`;
+  card.innerHTML = `
+    <img src="${imgUrl}" alt="${prod.name_en}">
+    <h3>${prod.name_ta}</h3>
+    <p style="margin-top:6px">${prod.name_en} • <small style="color:var(--muted)">${prod.pack}</small></p>
+    <div class="price-row">
+      <div>
+        <div class="price">₹${formatRupee(prod.price)}</div>
+        <div style="font-size:12px;color:var(--muted)">Per ${prod.pack}</div>
+      </div>
+      <div style="text-align:right">
+        <div class="qty">
+          <button onclick="changeQty('${prod.id}', -1)" aria-label="decrease">−</button>
+          <input id="q_${prod.id}" type="number" min="0" value="0" oninput="updateFromInput('${prod.id}')" />
+          <button onclick="changeQty('${prod.id}', 1)" aria-label="increase">+</button>
+        </div>
+        <div style="margin-top:6px" class="subtotal" id="s_${prod.id}">₹0</div>
+      </div>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+// quantities store
+const qtys = {}; // id -> number
+products.forEach(p=> qtys[p.id]=0);
+
+function changeQty(id,delta){
+  const input = document.getElementById('q_'+id);
+  let v = Number(input.value) || 0;
+  v += delta;
+  if(v<0) v=0;
+  input.value = v;
+  qtys[id]=v;
+  recalc();
+}
+function updateFromInput(id){
+  const input = document.getElementById('q_'+id);
+  let v = Number(input.value) || 0;
+  if(v<0) v=0;
+  qtys[id]=v;
+  recalc();
+}
+
+function recalc(){
+  let total = 0;
+  let items=0;
+  products.forEach(p=>{
+    const q = Number(qtys[p.id]) || 0;
+    const sub = q * Number(p.price);
+    document.getElementById('s_'+p.id).innerText = '₹' + formatRupee(sub);
+    total += sub;
+    items += q;
+  });
+  document.getElementById('grandTotal').innerText = 'Total Amount: ₹' + formatRupee(total);
+  document.getElementById('countItems').innerText = 'Total Items: ' + items;
+  // enable checkout if >= 2500
+  const checkout = document.getElementById('checkoutBtn');
+  if(total >= 2500){
+    checkout.style.pointerEvents='auto';
+    checkout.style.opacity='1';
+  } else {
+    checkout.style.pointerEvents='none';
+    checkout.style.opacity='0.6';
+  }
+}
+recalc();
+
+// WhatsApp checkout message with location
+async function checkout(){
+  // build message
+  let msg = 'வணக்கம்! நான் Kishanth Crackers-இலிருந்து பட்டாசு ஆர்டர் செய்ய விரும்புகிறேன்:%0A%0A';
+  let total = 0;
+  products.forEach(p=>{
+    const q = Number(qtys[p.id]) || 0;
+    if(q>0){
+      const sub = q*Number(p.price);
+      msg += `- ${p.name_en} (${p.name_ta}): ${q} × ₹${formatRupee(p.price)} = ₹${formatRupee(sub)}%0A`;
+      total += sub;
+    }
+  });
+  msg += `%0A🔥 மொத்தம்: ₹${formatRupee(total)}%0A`;
+  msg += `GPay: 7448489142%0A`;
+  // try to append location
+  try{
+    const pos = await getLocation(8000);
+    if(pos){
+      msg += `%0ALocation: https://www.google.com/maps/search/?api=1&query=${pos.lat},${pos.lon}%0A`;
+    }
+  }catch(e){
+    // ignore
+  }
+  msg += `%0AOwner: Prashanth, 3/61 South Street, Vembakottai`;
+
+  const num = '917448489142'; // owner number with country code
+  const url = 'https://wa.me/' + num + '?text=' + msg;
+  window.open(url,'_blank');
+}
+
+function getLocation(timeoutMs){
+  return new Promise((resolve)=>{
+    if(!navigator.geolocation) return resolve(null);
+    let done=false;
+    const timer = setTimeout(()=>{ if(!done){ done=true; resolve(null); } }, timeoutMs);
+    navigator.geolocation.getCurrentPosition(pos=>{
+      if(done) return;
+      done=true; clearTimeout(timer);
+      resolve({lat: pos.coords.latitude.toFixed(6), lon: pos.coords.longitude.toFixed(6)});
+    }, err=>{
+      if(done) return;
+      done=true; clearTimeout(timer); resolve(null);
+    }, {maximumAge:600000,timeout:timeoutMs});
+  });
+}
+
+// floating button quick order (just opens WhatsApp)
+document.getElementById('floatBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  const url = 'https://wa.me/917448489142';
+  window.open(url,'_blank');
+});
+
+// year
+document.getElementById('year').innerText = new Date().getFullYear();
+
+</script>
 </body>
 </html>
