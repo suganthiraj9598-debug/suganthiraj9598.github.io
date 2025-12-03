@@ -1,354 +1,134 @@
-<!
-  <main>
-    <div class="controls">
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <button class="category-btn active" data-cat="all" onclick="filterCategory('all')">All</button>
-        <button class="category-btn" data-cat="Sparklers" onclick="filterCategory('Sparklers')">Sparklers</button>
-        <button class="category-btn" data-cat="Flower Pots" onclick="filterCategory('Flower Pots')">Flower Pots</button>
-        <button class="category-btn" data-cat="Ground Chakkar" onclick="filterCategory('Ground Chakkar')">Chakkar</button>
-        <button class="category-btn" data-cat="Rockets" onclick="filterCategory('Rockets')">Rockets</button>
-        <button class="category-btn" data-cat="Sound Crackers" onclick="filterCategory('Sound Crackers')">Sound</button>
-        <button class="category-btn" data-cat="Kids Special" onclick="filterCategory('Kids Special')">Kids</button>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kishanth Crackers 🔥</title>
 
-      <div class="search" style="min-width:220px">
-        <input id="searchInput" type="search" placeholder="Search product..." oninput="renderProducts()" />
-      </div>
-    </div>
+<style>
+    body {
+        margin:0;
+        font-family: Arial, sans-serif;
+        background:#000;
+        color:#fff;
+    }
 
-    <h2 style="margin:14px 0 8px;color:var(--accent2)">Products</h2>
+    header {
+        background: linear-gradient(to right, #ff0000, #ffcc00);
+        color: #fff;
+        padding: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+    }
 
-    <div class="grid" id="productGrid">
-      <!-- Product cards appended by JS -->
-    </div>
-  </main>
+    .container { padding: 15px; }
 
-  <div style="margin-top:12px;font-size:13px;color:var(--muted)">
-    <strong>Note:</strong> Delivery available across Tamil Nadu. Parcel charges apply for outstation delivery. For bulk/combo orders contact on WhatsApp.
-  </div>
+    .product {
+        background: #111;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #333;
+    }
+
+    .product img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .price {
+        font-size: 18px;
+        color: #ffcc00;
+        margin: 5px 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #00c853;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>🔥 Kishanth Crackers — Vembakottai 🔥</header>
+
+<div class="container">
+
+<h2>Products</h2>
+
+<!-- PRODUCT TEMPLATE START -->
+<script>
+const products = [
+    // 1–7 Sound Crackers
+    {name:"2 3/4 inch Kuruvi", price:9, img:"https://picsum.photos/seed/1/600"},
+    {name:"3 1/2 inch Lakshmi Crackers", price:15, img:"https://picsum.photos/seed/2/600"},
+    {name:"4 inch Lakshmi Crackers", price:20, img:"https://picsum.photos/seed/3/600"},
+    {name:"4 inch Gold Lakshmi Crackers", price:30, img:"https://picsum.photos/seed/4/600"},
+    {name:"4 inch Deluxe Lakshmi Crackers", price:33, img:"https://picsum.photos/seed/5/600"},
+    {name:"2 Sound Crackers", price:24, img:"https://picsum.photos/seed/6/600"},
+    {name:"3 Sound Crackers", price:31, img:"https://picsum.photos/seed/7/600"},
+
+    // 8–13 Flower pots
+    {name:"Flower Pots Big", price:70, img:"https://picsum.photos/seed/8/600"},
+    {name:"Flower Pots Special", price:90, img:"https://picsum.photos/seed/9/600"},
+    {name:"Flower Pots Asoka", price:130, img:"https://picsum.photos/seed/10/600"},
+    {name:"Flower Pots Deluxe", price:160, img:"https://picsum.photos/seed/11/600"},
+    {name:"Flower Pots Color Koti", price:180, img:"https://picsum.photos/seed/12/600"},
+    {name:"Flower Pots Mega Tri Color", price:490, img:"https://picsum.photos/seed/13/600"},
+
+    // 14–20 Ground chakkar
+    {name:"Ground Chakkar Big", price:34, img:"https://picsum.photos/seed/14/600"},
+    {name:"Ground Chakkar Asoka", price:59, img:"https://picsum.photos/seed/15/600"},
+    {name:"Ground Chakkar Special", price:85, img:"https://picsum.photos/seed/16/600"},
+    {name:"Ground Chakkar Deluxe", price:135, img:"https://picsum.photos/seed/17/600"},
+    {name:"Giant Triple Wheel", price:150, img:"https://picsum.photos/seed/18/600"},
+    {name:"Spinner Mega Deluxe", price:169, img:"https://picsum.photos/seed/19/600"},
+    {name:"Multi Color Spinner (New Arrival)", price:220, img:"https://picsum.photos/seed/20/600"},
+
+    // 21–26 Sound crackers 2
+    {name:"Bigili Stripped 100pcs", price:48, img:"https://picsum.photos/seed/21/600"},
+    {name:"Bigili Stripped 50pcs", price:20, img:"https://picsum.photos/seed/22/600"},
+    {name:"Bigili Red 100pcs", price:45, img:"https://picsum.photos/seed/23/600"},
+    {name:"Bigili Red 50pcs", price:18, img:"https://picsum.photos/seed/24/600"},
+    {name:"Basket Bomb 100pcs", price:60, img:"https://picsum.photos/seed/25/600"},
+    {name:"Paper Bomb 1/4kg", price:55, img:"https://picsum.photos/seed/26/600"},
+
+    // 27–31 Atom Bombs
+    {name:"Bullet Bomb", price:30, img:"https://picsum.photos/seed/27/600"},
+    {name:"Mega Bullet", price:70, img:"https://picsum.photos/seed/28/600"},
+    {name:"Hydro Bomb Green", price:80, img:"https://picsum.photos/seed/29/600"},
+    {name:"Classic Bomb Green", price:110, img:"https://picsum.photos/seed/30/600"},
+    {name:"Jallikattu 9'' Ply Bomb", price:190, img:"https://picsum.photos/seed/31/600"},
+];
+
+products.forEach(p=>{
+    document.write(`
+        <div class="product">
+            <img src="${p.img}">
+            <div class="title">${p.name}</div>
+            <div class="price">₹${p.price}</div>
+            <button>Add to Cart</button>
+        </div>
+    `);
+});
+</script>
+<!-- PRODUCT TEMPLATE END -->
 
 </div>
 
-<footer>
-  <div>Owner: Prashanth • WhatsApp: 7448489142 • Address: Vembakottai – Sivakasi</div>
-  <div style="margin-top:8px">© <span id="year"></span> Kishanth Crackers</div>
-</footer>
-
-<a class="floating-wh" id="floatBtn" href="https://wa.me/917448489142" title="Order on WhatsApp">💬</a>
-<div id="cartBadge" class="cart-badge" style="display:none">🛒 0 | ₹0</div>
-
-<script>
-/* Product data (pulled/mapped from your PDF price list) */
-/* Using safe placeholder images (picsum) — you can replace with real images in /images/ folder later */
-const products = [
-  {id:'p1',category:'Sparklers',name_ta:'12CM - Electric Sparklers',name_en:'12CM Electric Sparklers',pack:'1Box - 10Pcs',price:200,imgSeed:'sparklers1'},
-  {id:'p2',category:'Sparklers',name_ta:'12CM - Crackling Sparklers',name_en:'12CM Crackling Sparklers',pack:'1Box - 10Pcs',price:220,imgSeed:'sparklers2'},
-  {id:'p3',category:'Sparklers',name_ta:'12CM - Green Sparklers',name_en:'12CM Green Sparklers',pack:'1Box - 10Pcs',price:240,imgSeed:'sparklers3'},
-  {id:'p4',category:'Sparklers',name_ta:'15CM - Electric Sparklers',name_en:'15CM Electric Sparklers',pack:'1Box - 10Pcs',price:350,imgSeed:'sparklers4'},
-
-  {id:'p10',category:'Color Matches',name_ta:'Super Deluxe (10in1)',name_en:'Super Deluxe (10in1)',pack:'1Box - 10Boxes',price:1000,imgSeed:'colormatch1'},
-  {id:'p11',category:'Color Matches',name_ta:'Classic (5in1)',name_en:'Classic (5in1)',pack:'1Box - 10Boxes',price:1600,imgSeed:'colormatch2'},
-
-  {id:'p20',category:'Sound Crackers',name_ta:'2 3/4 Kuruvi',name_en:'2 3/4 Kuruvi',pack:'1Pkt',price:100,imgSeed:'sound1'},
-  {id:'p21',category:'Sound Crackers',name_ta:'3.5 Lakshmi',name_en:'3.5 Lakshmi',pack:'1Pkt',price:150,imgSeed:'sound2'},
-  {id:'p22',category:'Sound Crackers',name_ta:'4inch Lakshmi (Machine Fuse)',name_en:'4inch Lakshmi',pack:'1Pkt',price:300,imgSeed:'sound3'},
-
-  {id:'p30',category:'Flower Pots',name_ta:'Flower Pots Big',name_en:'Flower Pots Big',pack:'1Box - 10Pcs',price:700,imgSeed:'flower1'},
-  {id:'p31',category:'Flower Pots',name_ta:'Color Koti',name_en:'Color Koti',pack:'1Box - 10Pcs',price:1700,imgSeed:'flower2'},
-  {id:'p32',category:'Flower Pots',name_ta:'Flower Pots Deluxe (5pcs)',name_en:'Flower Pots Deluxe',pack:'1Box - 5Pcs',price:1600,imgSeed:'flower3'},
-
-  {id:'p40',category:'Ground Chakkar',name_ta:'Ground Chakkar Special',name_en:'Ground Chakkar Special',pack:'1Box - 10Pcs',price:700,imgSeed:'ground1'},
-  {id:'p41',category:'Ground Chakkar',name_ta:'Ground Chakkar Asoka',name_en:'Ground Chakkar Asoka',pack:'1Box - 10Pcs',price:1600,imgSeed:'ground2'},
-
-  {id:'p50',category:'Fancy Chakkars',name_ta:'Spin Master mix',name_en:'Spin Master Mix',pack:'1Box - 10Pcs',price:1300,imgSeed:'fancy1'},
-
-  {id:'p60',category:'Bombs',name_ta:'Classic Bomb',name_en:'Classic Bomb',pack:'1Box - 10Pcs',price:1100,imgSeed:'bomb1'},
-  {id:'p61',category:'Bombs',name_ta:'Dinosaur Bomb',name_en:'Dinosaur Bomb',pack:'1Box - 10Pcs',price:1850,imgSeed:'bomb2'},
-
-  {id:'p70',category:'Kids Special',name_ta:'Money in the Bank',name_en:'Money in the Bank',pack:'1Box - 3Pcs',price:1200,imgSeed:'kids1'},
-  {id:'p71',category:'Kids Special',name_ta:'Helicopter',name_en:'Helicopter',pack:'1Box - 5Pcs',price:1000,imgSeed:'kids2'},
-
-  {id:'p80',category:'Night Attractions',name_ta:'Tricolor',name_en:'Tricolor Fountain',pack:'1Box - 5Pcs',price:2500,imgSeed:'night1'},
-  {id:'p81',category:'Night Attractions',name_ta:'Golden Rain',name_en:'Golden Rain',pack:'1Box - 5Pcs',price:900,imgSeed:'night2'},
-
-  {id:'p90',category:'Rockets',name_ta:'Rocket Bomb',name_en:'Rocket Bomb',pack:'1Box - 10PCS',price:600,imgSeed:'rocket1'},
-  {id:'p91',category:'Rockets',name_ta:'Sky shot (Chotta Fancy)',name_en:'Sky Shot',pack:'1Box',price:350,imgSeed:'rocket2'},
-
-  {id:'p100',category:'Premium',name_ta:'30 Shots',name_en:'30 Shots Cake',pack:'1Box',price:4000,imgSeed:'cake1'},
-  {id:'p101',category:'Premium',name_ta:'120 Shots',name_en:'120 Shots',pack:'1Box',price:15000,imgSeed:'cake2'}
-];
-
-// helper: format rupee safely (digit-by-digit)
-function formatRupee(n){
-  const s = Math.round(n).toString().split('').reverse().join('');
-  const parts = [];
-  for(let i=0;i<s.length;i++){
-    parts.push(s[i]);
-    if(i===2 || (i>2 && (i-2)%2===1)) parts.push(',');
-  }
-  return parts.join('').split('').reverse().join('').replace(/^,/, '') ;
-}
-
-// build product cards
-const grid = document.getElementById('productGrid');
-
-function buildCard(prod){
-  const card = document.createElement('div');
-  card.className='card';
-  card.dataset.cat = prod.category;
-  const imgUrl = `https://picsum.photos/seed/${encodeURIComponent(prod.imgSeed)}/800/600`;
-  card.innerHTML = `
-    <img src="${imgUrl}" alt="${prod.name_en}">
-    <h3>${prod.name_ta}</h3>
-    <p style="margin-top:6px">${prod.name_en} • <small style="color:var(--muted)">${prod.pack}</small></p>
-    <div class="price-row">
-      <div>
-        <div class="price">₹${formatRupee(prod.price)}</div>
-        <div style="font-size:12px;color:var(--muted)">Per ${prod.pack}</div>
-      </div>
-      <div style="text-align:right">
-        <div class="qty" style="justify-content:flex-end">
-          <button onclick="changeQty('${prod.id}', -1)" aria-label="decrease">−</button>
-          <input id="q_${prod.id}" type="number" min="0" value="0" oninput="updateFromInput('${prod.id}')" />
-          <button onclick="changeQty('${prod.id}', 1)" aria-label="increase">+</button>
-        </div>
-        <div style="margin-top:6px" class="subtotal" id="s_${prod.id}">₹0</div>
-        <div style="margin-top:8px">
-          <button class="wh-btn" style="width:100%" onclick="addToCart('${prod.id}')">🛒 Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  `;
-  return card;
-}
-
-function renderProducts(filter='all', query=''){
-  grid.innerHTML = '';
-  const q = query.trim().toLowerCase();
-  products.forEach(prod=>{
-    if(filter !== 'all' && prod.category !== filter) return;
-    if(q && !(prod.name_ta.toLowerCase().includes(q) || prod.name_en.toLowerCase().includes(q))) return;
-    const c = buildCard(prod);
-    grid.appendChild(c);
-  });
-}
-
-// quantities store & cart
-const qtys = {};
-products.forEach(p=> qtys[p.id]=0);
-const cart = {}; // id -> qty
-
-function changeQty(id,delta){
-  const input = document.getElementById('q_'+id);
-  if(!input) return;
-  let v = Number(input.value) || 0;
-  v += delta;
-  if(v<0) v=0;
-  input.value = v;
-  qtys[id]=v;
-  recalc();
-}
-function updateFromInput(id){
-  const input = document.getElementById('q_'+id);
-  if(!input) return;
-  let v = Number(input.value) || 0;
-  if(v<0) v=0;
-  qtys[id]=v;
-  recalc();
-}
-
-function addToCart(id){
-  const q = Number(qtys[id]) || 0;
-  if(q <= 0){
-    // if user didn't set qty, default add 1
-    qtys[id] = 1;
-    const inp = document.getElementById('q_'+id);
-    if(inp) inp.value = 1;
-  }
-  // add to cart mapping
-  cart[id] = (cart[id] || 0) + (Number(qtys[id]) || 0);
-  // reset the qty input for clarity (user can increase again)
-  const inp = document.getElementById('q_'+id);
-  if(inp) inp.value = 0;
-  qtys[id]=0;
-  recalc();
-  toast("Added to cart");
-}
-
-function recalc(){
-  let total = 0;
-  let itemsCount = 0;
-  // sum from cart
-  for(const id in cart){
-    const product = products.find(p=>p.id===id);
-    if(!product) continue;
-    const q = Number(cart[id]) || 0;
-    total += q * Number(product.price);
-    itemsCount += q;
-  }
-  // also include any current shown input quantities (user may not have clicked add)
-  for(const id in qtys){
-    const q = Number(qtys[id]) || 0;
-    if(q>0){
-      const product = products.find(p=>p.id===id);
-      if(product){
-        total += q * Number(product.price);
-        itemsCount += q;
-      }
-    }
-  }
-
-  document.getElementById('grandTotal').innerText = 'Total Amount: ₹' + formatRupee(total);
-  document.getElementById('countItems').innerText = 'Total Items: ' + itemsCount;
-
-  // cart badge update
-  const badge = document.getElementById('cartBadge');
-  if(itemsCount>0){
-    badge.style.display='block';
-    badge.innerText = `🛒 ${itemsCount} | ₹${formatRupee(total)}`;
-  } else {
-    badge.style.display='none';
-  }
-
-  // checkout enable: we set no minimum as requested
-  const checkout = document.getElementById('checkoutBtn');
-  if(total > 0){
-    checkout.style.pointerEvents='auto';
-    checkout.style.opacity='1';
-  } else {
-    checkout.style.pointerEvents='none';
-    checkout.style.opacity='0.6';
-  }
-}
-
-// small toast
-let toastTimer = null;
-function toast(msg){
-  const t = document.createElement('div');
-  t.style.position='fixed';
-  t.style.left='50%';
-  t.style.transform='translateX(-50%)';
-  t.style.bottom='110px';
-  t.style.background='rgba(0,0,0,0.8)';
-  t.style.color='#fff';
-  t.style.padding='10px 14px';
-  t.style.borderRadius='8px';
-  t.style.zIndex=9999;
-  t.innerText = msg;
-  document.body.appendChild(t);
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(()=>{ t.remove(); },1500);
-}
-
-// Checkout -> build WhatsApp message (includes cart items and optional location)
-async function checkout(){
-  let lines = [];
-  let total = 0;
-  // include items from cart
-  for(const id in cart){
-    const p = products.find(x=>x.id===id);
-    if(!p) continue;
-    const q = Number(cart[id]) || 0;
-    const sub = q * Number(p.price);
-    lines.push(`${p.name_en} (${p.name_ta}) — ${q} x ₹${formatRupee(p.price)} = ₹${formatRupee(sub)}`);
-    total += sub;
-  }
-  // include any input quantities not added to cart (optional)
-  for(const id in qtys){
-    const q = Number(qtys[id]) || 0;
-    if(q>0){
-      const p = products.find(x=>x.id===id);
-      if(!p) {
-        continue;
-      }
-      const sub = q * Number(p.price);
-      lines.push(`${p.name_en} (${p.name_ta}) — ${q} x ₹${formatRupee(p.price)} = ₹${formatRupee(sub)}`);
-      total += sub;
-    }
-  }
-  if(total === 0){
-    alert('தயவு செய்து உங்களால் ஒரு பொருளும் சேர்க்கவும் (Add to Cart)!');
-    return;
-  }
-
-  let msg = 'வணக்கம்! நான் Kishanth Crackers-இலிருந்து பட்டாசு ஆர்டர் செய்ய விரும்புகிறேன்:%0A%0A';
-  lines.forEach(l=>{ msg += '- ' + encodeURIComponent(l) + '%0A'; });
-  msg += `%0A🔥 மொத்தம்: ₹${formatRupee(total)}%0A`;
-  msg += `GPay/UPI: 7448489142%0A`;
-
-  // try to append location (if user allows)
-  try{
-    const pos = await getLocation(7000);
-    if(pos){
-      msg += `%0ALocation: https://www.google.com/maps/search/?api=1&query=${pos.lat},${pos.lon}%0A`;
-    }
-  }catch(e){ /* ignore */ }
-
-  msg += `%0AOwner: Prashanth, Vembakottai – Sivakasi`;
-
-  const num = '917448489142';
-  const url = 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
-  window.open(url,'_blank');
-}
-
-// try to get user location (timeout)
-function getLocation(timeoutMs){
-  return new Promise((resolve)=>{
-    if(!navigator.geolocation) return resolve(null);
-    let done=false;
-    const timer = setTimeout(()=>{ if(!done){ done=true; resolve(null); } }, timeoutMs);
-    navigator.geolocation.getCurrentPosition(pos=>{
-      if(done) return;
-      done=true; clearTimeout(timer);
-      resolve({lat: pos.coords.latitude.toFixed(6), lon: pos.coords.longitude.toFixed(6)});
-    }, err=>{
-      if(done) return;
-      done=true; clearTimeout(timer); resolve(null);
-    }, {maximumAge:600000,timeout:timeoutMs});
-  });
-}
-
-// small UI helpers
-function filterCategory(cat){
-  // toggle active buttons
-  document.querySelectorAll('.category-btn').forEach(b=>{
-    if(b.dataset.cat === cat) b.classList.add('active'); else b.classList.remove('active');
-  });
-  renderProducts(cat, document.getElementById('searchInput').value || '');
-}
-
-function renderProductsWrapper(){
-  const q = document.getElementById('searchInput').value || '';
-  const active = document.querySelector('.category-btn.active');
-  const cat = active ? active.dataset.cat : 'all';
-  renderProducts(cat, q);
-}
-
-// add direct cart remove (for future) and small UI
-function clearCart(){
-  for(const id in cart) delete cart[id];
-  recalc();
-}
-
-// floating order click
-document.getElementById('floatBtn').addEventListener('click', function(e){
-  e.preventDefault();
-  window.open('https://wa.me/917448489142','_blank');
-});
-
-// listen to search input to render debounce
-let searchTimer = null;
-document.getElementById('searchInput').addEventListener('input', function(){
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(()=>{ renderProductsWrapper(); }, 220);
-});
-
-// init render
-renderProducts();
-recalc();
-
-// set year
-document.getElementById('year').innerText = new Date().getFullYear();
-</script>
 </body>
 </html>
