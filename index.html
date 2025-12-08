@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ta">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KISHANTH CRACKERS — Vembakottai</title>
-<meta name="description" content="Kishanth Crackers - Price list & Order. WhatsApp: 7448489142 • GPay: suganthiraj9598-1@okaxis" />
+<meta name="description" content="Kishanth Crackers - Price list & Order. WhatsApp: 7448489142 • GPay: suganthiraj9598-1@okaxis">
 <style>
   :root{
     --bg:#fff7ec;
@@ -13,68 +13,78 @@
     --yellow:#ffd24d;
     --muted:#6b6b6b;
     --success:#25D366;
-    --accent-dark:#b22222;
-    --badge-red:#ff3b2f;
-    --badge-green:#0b6b0b;
-    --container: 1040px;
+    --accent:#b22222;
+    --maxw:1100px;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;font-family:Arial,system-ui,"Noto Sans Tamil",sans-serif;background:var(--bg);color:#111}
-  header{background:linear-gradient(90deg,var(--red),var(--yellow));padding:18px 12px;text-align:center;color:#fff;position:sticky;top:0;z-index:50}
-  header h1{margin:0;font-size:22px;letter-spacing:1px;font-weight:800;text-shadow:0 1px 2px rgba(0,0,0,0.25)}
-  header p{margin:6px 0 0;font-size:13px;color:#111;background:rgba(255,255,255,0.12);display:inline-block;padding:5px 10px;border-radius:8px}
-  .wrap{max-width:var(--container);margin:14px auto;padding:12px}
-  .top-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  body{margin:0;font-family:Arial,system-ui,"Noto Sans Tamil",sans-serif;background:var(--bg);color:#111}
+  /* Header / Banner */
+  header{background:linear-gradient(90deg,var(--red),var(--yellow));padding:18px 12px;color:#fff;position:sticky;top:0;z-index:80}
+  .brand{display:flex;align-items:center;gap:12px;justify-content:space-between;max-width:var(--maxw);margin:0 auto}
+  .brand h1{margin:0;font-size:22px;letter-spacing:1px}
+  .sub{font-size:13px;color:#111;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:8px;font-weight:700}
+  .banner-note{max-width:var(--maxw);margin:12px auto;padding:8px 12px;background:rgba(0,0,0,0.06);border-radius:8px;text-align:center;font-weight:700}
+  .wrap{max-width:var(--maxw);margin:14px auto;padding:12px}
+  /* Controls */
+  .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
   .search{flex:1;min-width:200px}
   .search input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6d6b8;background:#fff;font-size:15px}
   .chips{display:flex;gap:8px;flex-wrap:wrap}
   .chip{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;font-weight:700}
   .chip.active{background:linear-gradient(90deg,var(--yellow),#fff3b8);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
   .gpay{padding:8px 12px;background:#041f6b;color:var(--yellow);border-radius:8px;font-weight:800}
-  .container{max-width:var(--container);margin:14px auto}
-  .controls{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  /* Sections */
   .section-title{margin-top:18px;margin-bottom:8px;padding:10px;border-radius:10px;display:flex;align-items:center;gap:10px}
   .section-yellow{background:linear-gradient(90deg,#fff6e6,#fff8e0);border-left:6px solid var(--yellow)}
   .section-red{background:linear-gradient(90deg,#fff6f6,#fff4f4);border-left:6px solid #ffb3b3}
-  .section-pink{background:linear-gradient(90deg,#fff7f9,#fff3f6);border-left:6px solid #ffb3d6}
   .section-blue{background:linear-gradient(90deg,#f6faff,#eef8ff);border-left:6px solid #86c8ff}
+  .section-pink{background:linear-gradient(90deg,#fff7f9,#fff3f6);border-left:6px solid #ffb3d6}
+  /* Products */
   .product-row{background:var(--card);padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin:10px 0;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
   .product-left{max-width:70%}
-  .product-left h3{margin:0;font-size:16px;color:var(--accent-dark);font-weight:800}
+  .product-left h3{margin:0;font-size:16px;color:var(--accent);font-weight:800}
   .product-left small{display:block;color:var(--muted);margin-top:6px}
   .price{font-weight:900;color:#0b6b0b;min-width:160px;text-align:right}
   .badge{display:inline-block;padding:6px 8px;border-radius:6px;font-weight:800;color:#fff;margin-left:8px;font-size:12px}
-  .badge.off{background:var(--badge-red)}
+  .badge.off{background:var(--red)}
   .badge.new{background:#6b3fff}
-  .qty-controls{display:flex;gap:8px;align-items:center;justify-content:flex-end}
-  .qty-controls button{padding:6px 10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer;font-weight:800}
-  .qty-controls input{width:56px;padding:8px;border-radius:8px;border:1px solid #eee;text-align:center}
-  footer{margin-top:22px;padding:18px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid rgba(0,0,0,0.03)}
-  .floating-wh{position:fixed;right:14px;bottom:14px;background:var(--success);color:#fff;padding:14px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.2);z-index:999;display:flex;align-items:center;justify-content:center;text-decoration:none}
-  .cart-bar{position:fixed;left:14px;bottom:14px;background:#fff;padding:10px 12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12);z-index:999;display:flex;gap:10px;align-items:center}
-  .cart-bar button{background:var(--red);color:#fff;border:none;padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer}
-  .small-note{font-size:13px;color:var(--muted)}
+  .order-btn{background:var(--success);color:#fff;padding:8px 12px;border-radius:8px;border:none;font-weight:800;cursor:pointer;margin-left:12px}
   .pipe-note{font-style:italic;color:#b04a4a}
+  footer{margin-top:22px;padding:18px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid rgba(0,0,0,0.03)}
+  /* Floating */
+  .floating-wh{position:fixed;right:14px;bottom:14px;background:var(--success);color:#fff;padding:14px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.2);z-index:999;display:flex;align-items:center;justify-content:center;text-decoration:none}
+  /* Cart quick (not used for cart; shows contact) */
+  .cart-bar{position:fixed;left:14px;bottom:14px;background:#fff;padding:10px 12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12);z-index:999;display:flex;gap:10px;align-items:center}
+  .cart-bar a{background:var(--red);color:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:800}
   @media(max-width:720px){
     .product-left{max-width:60%}
-    .price{min-width:130px}
+    .price{min-width:120px}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🔥 KISHANTH CRACKERS 🔥</h1>
-  <p>📞 WhatsApp: <strong>7448489142</strong> • GPay: <strong>suganthiraj9598-1@okaxis</strong></p>
+  <div class="brand">
+    <div>
+      <h1>🔥 KISHANTH CRACKERS 🔥</h1>
+      <div style="margin-top:6px"><span style="font-weight:700">📞</span> <strong>7448489142</strong> &nbsp;&nbsp; <span style="font-weight:700">GPay:</span> <strong>suganthiraj9598-1@okaxis</strong></div>
+    </div>
+    <div>
+      <div class="sub">Wholesale & Retail • Delivery Available • No Minimum Order</div>
+    </div>
+  </div>
 </header>
 
+<div class="banner-note">🎉 சிறப்பு சலுகைகள், புதிய கலப்பு தொகுப்புகள் — காலை 9 மணி முதல் இரவு 9 மணி வரை. Order via WhatsApp.</div>
+
 <div class="wrap">
-  <div class="top-row">
-    <div class="search" style="flex:1">
-      <input id="searchBox" placeholder="Search product (example: Lakshmi, Flower, Rocket)..." />
+  <div class="controls">
+    <div class="search">
+      <input id="searchBox" placeholder="Search product (e.g., Lakshmi, Flower, Rocket)..." />
     </div>
 
-    <div class="chips">
+    <div class="chips" id="chipContainer">
       <div class="chip active" data-cat="All" onclick="setCategory('All')">All</div>
       <div class="chip" data-cat="Flower" onclick="setCategory('Flower')">Flower Pots</div>
       <div class="chip" data-cat="Chakkar" onclick="setCategory('Chakkar')">Chakkar</div>
@@ -85,42 +95,40 @@
       <div class="chip" data-cat="Kids" onclick="setCategory('Kids')">Kids</div>
       <div class="chip" data-cat="Fountain" onclick="setCategory('Fountain')">Fountains</div>
       <div class="chip" data-cat="Sky" onclick="setCategory('Sky')">Sky Shot</div>
-      <div class="chip" data-cat="Whistle" onclick="setCategory('Whistle')">Whistle</div>
+      <div class="chip" data-cat="Whistle" onclick="setCategory('Whistle')">Whistling</div>
       <div class="chip" data-cat="Sparklers" onclick="setCategory('Sparklers')">Sparklers</div>
       <div class="chip" data-cat="Pipe" onclick="setCategory('Pipe')">Pipe Series</div>
     </div>
+
+    <div class="gpay">GPay: suganthiraj9598-1@okaxis</div>
   </div>
-</div>
 
-<div class="container">
-  <!-- dynamic products will be inserted here -->
-  <div id="products"></div>
+  <main id="productList">
+    <!-- products injected by JS -->
+  </main>
 
-  <div style="margin-top:18px;font-size:13px;color:var(--muted)">
-    <strong>Note:</strong> If any product missing or rates changed, contact via WhatsApp. Pipe Series rates change daily — contact for today's price.
+  <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+    <strong>Note:</strong> Pipe series rates change daily — contact via WhatsApp for today's rate. If any product missing or rate changed, message on WhatsApp and we'll update immediately.
   </div>
 </div>
 
 <!-- floating WhatsApp -->
-<a class="floating-wh" id="floatBtn" href="https://wa.me/917448489142" title="Order on WhatsApp">💬</a>
+<a class="floating-wh" id="floatBtn" href="https://wa.me/9174489142" title="Order on WhatsApp">💬</a>
 
-<!-- Cart quick bar -->
-<div class="cart-bar" id="cartBar" style="display:none">
-  <div id="cartSummary">Items: 0 | ₹0</div>
-  <button onclick="openCheckout()">Checkout</button>
+<!-- cart-bar quick link to WhatsApp (not cart) -->
+<div class="cart-bar">
+  <div style="font-weight:800">Need help?</div>
+  <a href="https://wa.me/9174489142">Chat on WhatsApp</a>
 </div>
 
 <footer>
   <div>Owner: Prashanth • WhatsApp: <strong>7448489142</strong> • Address: <strong>3/61, South Street, Vembakottai</strong></div>
-  <div style="margin-top:6px">© <span id="year"></span> Kishanth Crackers</div>
+  <div style="margin-top:8px">© <span id="year"></span> Kishanth Crackers</div>
 </footer>
 
 <script>
-/* Product array built from your screenshots (all items included).
-   Each product: id, category, name, pack, actual, offer
-*/
+/* Product data (from your price lists) */
 const products = [
-  // Flower Pots
   {id:'p1', cat:'Flower', name:'Flower Pots Big', pack:'1 Box (10pcs)', actual:280, offer:70},
   {id:'p2', cat:'Flower', name:'Flower Pots Special', pack:'1 Box (10pcs)', actual:360, offer:90},
   {id:'p3', cat:'Flower', name:'Flower Pots Asoka', pack:'1 Box', actual:520, offer:130},
@@ -128,7 +136,6 @@ const products = [
   {id:'p5', cat:'Flower', name:'Flower Pots Color Koti', pack:'1 Box', actual:720, offer:180},
   {id:'p6', cat:'Flower', name:'Flower Pots Mega Tri Color', pack:'1 Box', actual:1960, offer:490},
 
-  // Ground Chakkar
   {id:'p7', cat:'Chakkar', name:'Ground Chakkar Big (10pcs)', pack:'1 Box', actual:136, offer:34},
   {id:'p8', cat:'Chakkar', name:'Ground Chakkar Asoka', pack:'1 Box', actual:236, offer:59},
   {id:'p9', cat:'Chakkar', name:'Ground Chakkar Special', pack:'1 Box', actual:340, offer:85},
@@ -137,7 +144,6 @@ const products = [
   {id:'p12', cat:'Chakkar', name:'Spinner Mega Deluxe', pack:'1 Box', actual:676, offer:169},
   {id:'p13', cat:'Chakkar', name:'Multi Color Spinner (5pcs)', pack:'1 Box', actual:880, offer:220},
 
-  // Sound crackers
   {id:'p14', cat:'Sound', name:'2¾\" Kuruvi', pack:'1 Pkt', actual:36, offer:9},
   {id:'p15', cat:'Sound', name:'3½\" Lakshmi', pack:'1 Pkt', actual:60, offer:15},
   {id:'p16', cat:'Sound', name:'4\" Lakshmi', pack:'1 Pkt', actual:80, offer:20},
@@ -146,7 +152,6 @@ const products = [
   {id:'p19', cat:'Sound', name:'2 Sound Crackers', pack:'1 Pkt', actual:96, offer:24},
   {id:'p20', cat:'Sound', name:'3 Sound Crackers', pack:'1 Pkt', actual:124, offer:31},
 
-  // Bigili & bulk
   {id:'p21', cat:'Bigili', name:'Bigili Cracker Stripped 100pcs', pack:'1 Pkt', actual:192, offer:48},
   {id:'p22', cat:'Bigili', name:'Bigili Cracker Stripped 50pcs', pack:'1 Pkt', actual:80, offer:20},
   {id:'p23', cat:'Bigili', name:'Bigili Cracker Red 100pcs', pack:'1 Pkt', actual:180, offer:45},
@@ -154,157 +159,104 @@ const products = [
   {id:'p25', cat:'Bigili', name:'Basket Bomb (Olla Vedi) - 100pcs', pack:'1 Pkt', actual:240, offer:60},
   {id:'p26', cat:'Bigili', name:'Paper Bomb ¼ kg', pack:'1 Box', actual:220, offer:55},
 
-  // Atom
   {id:'p27', cat:'Atom', name:'Bullet Bomb', pack:'1 Box', actual:120, offer:30},
   {id:'p28', cat:'Atom', name:'Mega Bullet', pack:'1 Box', actual:280, offer:70},
   {id:'p29', cat:'Atom', name:'Hydro Bomb Green', pack:'1 Box', actual:320, offer:80},
   {id:'p30', cat:'Atom', name:'Classic Bomb Green', pack:'1 Box', actual:440, offer:110},
   {id:'p31', cat:'Atom', name:'Jallikattu 9” Ply Bomb', pack:'1 Box', actual:760, offer:190},
 
-  // Rockets
   {id:'p32', cat:'Rockets', name:'Rocket Bomb', pack:'1 Box (10pcs)', actual:600, offer:60},
   {id:'p33', cat:'Rockets', name:'Mini Sky shot (Black & White)', pack:'1 Box', actual:1900, offer:190},
 
-  // Kids
   {id:'p34', cat:'Kids', name:'Money in the Bank', pack:'1 Box (3pcs)', actual:1200, offer:120},
   {id:'p35', cat:'Kids', name:'Magizh Heist (Money Bank)', pack:'1 Box (2pcs)', actual:1800, offer:180},
 
-  // Fountains
   {id:'p36', cat:'Fountain', name:'Water fall Pencil', pack:'1 Box (5pcs)', actual:2200, offer:220},
   {id:'p37', cat:'Fountain', name:'Pop Corn Pencil', pack:'1 Box (5pcs)', actual:2200, offer:220},
 
-  // Sky single
   {id:'p38', cat:'Sky', name:'Sky shot - Chotta Fancy', pack:'1 Box', actual:350, offer:35},
   {id:'p39', cat:'Sky', name:'3 Pcs Comet', pack:'1 Box (3pcs)', actual:2500, offer:250},
 
-  // Whistle
   {id:'p40', cat:'Whistle', name:'Twinkling Star 4 inch', pack:'1 Box', actual:600, offer:60},
 
-  // Sparklers
   {id:'p41', cat:'Sparklers', name:'12cm Electric Sparklers (10pcs)', pack:'1 Box', actual:200, offer:20},
   {id:'p42', cat:'Sparklers', name:'15cm Electric Sparklers (10pcs)', pack:'1 Box', actual:350, offer:35},
 
-  // Pipe series (no price)
   {id:'p43', cat:'Pipe', name:'3 inch Pipe', pack:'—', actual:null, offer:null},
   {id:'p44', cat:'Pipe', name:'3 Pcs Fancy Pipe', pack:'—', actual:null, offer:null},
   {id:'p45', cat:'Pipe', name:'4 inch Pipe', pack:'—', actual:null, offer:null}
 ];
 
-// quantities store
-const qtys = {};
-products.forEach(p=> qtys[p.id]=0);
+/* build product list UI (no images) */
+const productList = document.getElementById('productList');
 
-// util: format rupee safely (digit-by-digit)
-function formatRupee(n){
-  if(n === null || n === undefined) return '—';
-  const s = Math.round(n).toString().split('').reverse().join('');
-  const parts = [];
-  for(let i=0;i<s.length;i++){
-    parts.push(s[i]);
-    if(i===2 || (i>2 && (i-2)%2===1)) parts.push(',');
-  }
-  return '₹' + parts.join('').split('').reverse().join('').replace(/^,/, '');
-}
-
-// build UI
-const grid = document.getElementById('products');
-
-function buildProducts(){
-  grid.innerHTML = '';
-  let lastCat = '';
+function buildUI(){
+  productList.innerHTML = '';
+  let last = '';
   products.forEach(p=>{
-    // section titles only when category changes
-    if(p.cat !== lastCat){
+    if(p.cat !== last){
       const sec = document.createElement('div');
-      sec.className = 'section-title ' + (p.cat === 'Flower' || p.cat === 'Rockets' || p.cat === 'Sound' || p.cat === 'Pipe' ? 'section-yellow' : (p.cat === 'Chakkar' || p.cat === 'Bigili' ? 'section-red' : (p.cat === 'Fountain' || p.cat === 'Atom' ? 'section-pink' : 'section-blue')));
-      sec.innerHTML = `<div style="font-size:18px">${getCatEmoji(p.cat)}</div><div style="font-weight:800">${getCatTitle(p.cat)}</div>`;
-      grid.appendChild(sec);
-      lastCat = p.cat;
+      sec.className = 'section-title ' + (p.cat==='Flower' || p.cat==='Rockets' || p.cat==='Sound' || p.cat==='Pipe' ? 'section-yellow' : (p.cat==='Chakkar' || p.cat==='Bigili' ? 'section-red' : (p.cat==='Fountain' || p.cat==='Atom' ? 'section-pink' : 'section-blue')));
+      sec.innerHTML = `<div style="font-size:18px">${getEmoji(p.cat)}</div><div style="font-weight:800">${getTitle(p.cat)}</div>`;
+      productList.appendChild(sec);
+      last = p.cat;
     }
 
     const row = document.createElement('div');
     row.className = 'product-row';
     row.setAttribute('data-cat', p.cat);
-    row.setAttribute('data-name', (p.name + ' ' + p.pack).toLowerCase());
+    row.setAttribute('data-name', (p.name + ' ' + (p.pack||'')).toLowerCase());
 
     const left = document.createElement('div');
     left.className = 'product-left';
-    left.innerHTML = `<h3>${p.name}${(p.offer && p.actual && p.offer < p.actual) ? '<span class="badge off">OFF</span>' : ''}${(p.actual && p.offer && Math.round(100 - (p.offer*100/p.actual))>0 ? '<span class="badge" style="background:var(--badge-green)">-'+Math.round(100 - (p.offer*100/p.actual))+'%</span>':'') }</h3><small>${p.pack}</small>`;
+    const offBadge = (p.actual && p.offer && p.offer < p.actual) ? `<span class="badge off">OFF</span><span class="badge" style="background:#0b6b0b">-${Math.round(100 - (p.offer*100/p.actual))}%</span>` : (p.actual ? '' : '<span class="badge new">RATE DAY</span>');
+    left.innerHTML = `<h3>${p.name} ${offBadge}</h3><small>${p.pack}</small>`;
 
     const right = document.createElement('div');
-    right.className = 'product-right';
-
-    // price or dash
+    right.style.display='flex'; right.style.flexDirection='column'; right.style.alignItems='flex-end';
     const price = document.createElement('div');
     price.className = 'price';
-    price.innerText = (p.actual ? (formatRupee(p.offer) + '  (MRP ' + formatRupee(p.actual) + ')') : 'Rates change daily');
+    price.innerText = (p.actual ? formatRupee(p.offer) + '  (MRP ' + formatRupee(p.actual) + ')' : 'Rates change daily');
 
-    // qty controls
-    const qty = document.createElement('div');
-    qty.className = 'qty-controls';
-    qty.innerHTML = `<button onclick="changeQty('${p.id}', -1)">−</button><input id="q_${p.id}" type="number" min="0" value="0" oninput="updateFromInput('${p.id}')"/><button onclick="changeQty('${p.id}', 1)">+</button>`;
+    const order = document.createElement('div');
+    order.style.marginTop='8px';
+    order.innerHTML = `<button class="order-btn" onclick="orderProduct('${p.id}')">📲 Order</button>`;
 
     right.appendChild(price);
-    right.appendChild(qty);
+    right.appendChild(order);
 
     row.appendChild(left);
     row.appendChild(right);
-
-    grid.appendChild(row);
+    productList.appendChild(row);
   });
 }
-buildProducts();
+buildUI();
 
-// helpers for titles/emojis
-function getCatTitle(cat){
-  const map = {Flower:'FLOWER POTS', Chakkar:'GROUND CHAKKAR', Sound:'SOUND CRACKERS', Bigili:'BIGILI & BULK SOUND', Atom:'ATOM BOMB', Rockets:'ROCKETS', Kids:'KIDS', Fountain:'FANCY FOUNTAINS', Sky:'SKY SHOT', Whistle:'WHISTLING', Sparklers:'SPARKLERS', Pipe:'PIPE SERIES'};
+function getTitle(cat){
+  const map = {Flower:'FLOWER POTS', Chakkar:'GROUND CHAKKAR', Sound:'SOUND CRACKERS', Bigili:'BIGILI & BULK SOUND', Atom:'ATOM BOMB', Rockets:'ROCKETS', Kids:'KIDS FANCY NOVELTIES', Fountain:'FANCY FOUNTAINS', Sky:'SKY SHOT (SINGLE)', Whistle:'WHISTLING SERIES', Sparklers:'BRANDED SPARKLERS', Pipe:'PIPE SERIES'};
   return map[cat] || cat;
 }
-function getCatEmoji(cat){
+function getEmoji(cat){
   const map = {Flower:'🌼', Chakkar:'🌀', Sound:'🔊', Bigili:'🔔', Atom:'💣', Rockets:'🚀', Kids:'👶', Fountain:'✨', Sky:'🌌', Whistle:'🎵', Sparklers:'✨', Pipe:'🔧'};
   return map[cat] || '📦';
 }
 
-// qty logic
-function changeQty(id,delta){
-  const input = document.getElementById('q_'+id);
-  let v = Number(input.value) || 0;
-  v += delta;
-  if(v<0) v=0;
-  input.value = v;
-  qtys[id]=v;
-  recalc();
-}
-function updateFromInput(id){
-  const input = document.getElementById('q_'+id);
-  let v = Number(input.value) || 0;
-  if(v<0) v=0;
-  qtys[id]=v;
-  recalc();
+/* helpers */
+function formatRupee(n){
+  if(n===null||n===undefined) return '—';
+  const s = Math.round(n).toString().split('').reverse().join('');
+  const parts=[];
+  for(let i=0;i<s.length;i++){ parts.push(s[i]); if(i===2 || (i>2 && (i-2)%2===1)) parts.push(','); }
+  return '₹' + parts.join('').split('').reverse().join('').replace(/^,/, '');
 }
 
-function recalc(){
-  let total = 0, items = 0;
-  products.forEach(p=>{
-    const q = Number(qtys[p.id]) || 0;
-    if(p.offer) total += q * Number(p.offer);
-    items += q;
-  });
-  document.getElementById('cartSummary').innerText = 'Items: ' + items + ' | ' + (total ? formatRupee(total) : '₹0');
-  document.getElementById('countItems') && (document.getElementById('countItems').innerText = 'Total Items: ' + items);
-  document.getElementById('grandTotal') && (document.getElementById('grandTotal').innerText = 'Total Amount: ' + (total ? formatRupee(total) : '₹0'));
-  // show/hide cart bar
-  document.getElementById('cartBar').style.display = items > 0 ? 'flex' : 'none';
-}
-
-// category / search
+/* search & category */
 function setCategory(cat){
-  document.querySelectorAll('.chip').forEach(c=> c.classList.toggle('active', c.dataset.cat === cat));
+  document.querySelectorAll('.chip').forEach(c=> c.classList.toggle('active', c.dataset.cat===cat));
   document.querySelectorAll('.product-row').forEach(r=>{
-    if(cat === 'All') r.style.display = 'flex';
-    else r.style.display = (r.getAttribute('data-cat') === cat) ? 'flex' : 'none';
+    if(cat==='All') r.style.display='flex'; else r.style.display = (r.getAttribute('data-cat')===cat) ? 'flex' : 'none';
   });
-  document.getElementById('searchBox').value = '';
+  document.getElementById('searchBox').value='';
 }
 document.getElementById('searchBox').addEventListener('input', function(){
   const q = this.value.trim().toLowerCase();
@@ -312,52 +264,24 @@ document.getElementById('searchBox').addEventListener('input', function(){
     const text = r.getAttribute('data-name');
     r.style.display = text.includes(q) ? 'flex' : 'none';
   });
-  // deactivate chips
   document.querySelectorAll('.chip').forEach(c=> c.classList.remove('active'));
 });
 
-// checkout → build WhatsApp message
-function openCheckout(){
-  checkout();
-}
-function checkout(){
-  let msg = 'வணக்கம்! நான் Kishanth Crackers-இலிருந்து பட்டாசு ஆர்டர் செய்ய விரும்புகிறேன்:%0A%0A';
-  let total = 0; let items=0;
-  products.forEach(p=>{
-    const q = Number(qtys[p.id]) || 0;
-    if(q>0){
-      const price = p.offer ? p.offer : 0;
-      const sub = q * price;
-      msg += `- ${p.name} (${p.pack}): ${q} × ${formatNumber(price)} = ${formatNumber(sub)}%0A`;
-      total += sub; items += q;
-    }
-  });
-  if(items === 0){ alert('தயவுசெய்து முதலில் items தேர்வு செய்யவும்!'); return; }
-  msg += `%0A🔥 மொத்தம்: ${formatNumber(total)}%0A`;
-  msg += `GPay / UPI: suganthiraj9598-1@okaxis%0A`;
-  msg += `Address: 3/61, South Street, Vembakottai%0A%0AKindly confirm delivery details.`;
+/* Order action: opens WhatsApp with single product message */
+function orderProduct(productId){
+  const p = products.find(x=> x.id===productId);
+  if(!p) return;
+  let msg = `வணக்கம்! நான் Kishanth Crackers-இலிருந்து ஒரு ஆர்டர் செய்ய விரும்புகிறேன்.%0A%0A`;
+  msg += `Product: ${p.name}%0APack: ${p.pack}%0APrice: ${p.offer ? formatRupee(p.offer) : 'Rates change daily'}%0A%0A`;
+  msg += `GPay/UPI: suganthiraj9598-1@okaxis%0AAddress: 3/61 South Street, Vembakottai%0A%0APlease confirm delivery & availability.`;
   const num = '917448489142';
   const url = 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
-  window.open(url,'_blank');
+  window.open(url, '_blank');
 }
 
-// small rupee formatter for message (digit-safe)
-function formatNumber(n){
-  if(n === null || n === undefined) return '—';
-  const s = Math.round(n).toString().split('').reverse().join('');
-  const parts = [];
-  for(let i=0;i<s.length;i++){
-    parts.push(s[i]);
-    if(i===2 || (i>2 && (i-2)%2===1)) parts.push(',');
-  }
-  return '₹' + parts.join('').split('').reverse().join('').replace(/^,/,'');
-}
-
-// init
-recalc();
-document.getElementById('year').innerText = new Date().getFullYear();
+/* floating btn open */
 document.getElementById('floatBtn').addEventListener('click', function(e){ e.preventDefault(); window.open(this.href,'_blank'); });
-
+document.getElementById('year').innerText = new Date().getFullYear();
 </script>
 </body>
 </html>
