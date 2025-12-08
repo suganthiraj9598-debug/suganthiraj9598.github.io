@@ -1,311 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ta">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Kishanth Crackers — Order Online (Vembakottai)</title>
-<meta name="description" content="Kishanth Crackers - Best Crackers at Best Price. Order Online - Delivery Available. WhatsApp: 7448489142" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KISHANTH CRACKERS</title>
+
 <style>
-  :root{
-    --bg:#fff7ec;
-    --card:#fff;
-    --accent:#ff3b2f; /* red */
-    --accent2:#ffd24d; /* yellow */
-    --muted:#6b6b6b;
-    --success:#25D366;
-    --glass: rgba(255,255,255,0.6);
-    --section-bg: linear-gradient(90deg,#fff6e6,#fff2d9);
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;background:var(--bg);color:#111;font-family:Arial,system-ui,-apple-system,"Noto Sans Tamil",sans-serif}
-  header{background:linear-gradient(90deg,var(--accent),var(--accent2));padding:18px 14px;text-align:center;position:sticky;top:0;z-index:40;color:#fff}
-  header h1{margin:0;font-size:20px;letter-spacing:0.6px;font-weight:800}
-  header p{margin:6px 0 0;font-size:13px;color:#111;font-weight:700;background:rgba(255,255,255,0.12);display:inline-block;padding:6px 10px;border-radius:6px}
-  .wrap{max-width:1100px;margin:14px auto;padding:12px}
-  .checkout-bar{margin-top:12px;background:#ffffff;padding:12px;border-radius:12px;display:flex;gap:12px;align-items:center;flex:1;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-  .totals{flex:1}
-  .totals div{font-size:14px;color:var(--muted)}
-  .totals .big{font-size:18px;font-weight:800;color:#0b6b0b;margin-top:6px}
-  .gpay{background:#041f6b;padding:8px 12px;border-radius:8px;color:var(--accent2);font-weight:700;color:#ffd24d}
-  .wh-btn{background:var(--success);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-  .note{font-size:12px;color:var(--muted);margin-top:6px}
-  .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
-  .chip{background:var(--card);border:1px solid #f0e0d0;color:#333;padding:8px 12px;border-radius:12px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.03)}
-  .chip.active{background:linear-gradient(90deg,var(--accent2),#ffd7a8);color:#111;font-weight:800;border:1px solid rgba(0,0,0,0.06)}
-  .section-title{display:flex;align-items:center;gap:10px;margin:18px 0 8px;padding:8px 12px;border-radius:10px}
-  .section-title .title{font-weight:800}
-  .section-yellow{background:linear-gradient(90deg,#fff6e6,#fff8e0);border-left:6px solid #ffd34d}
-  .section-red{background:linear-gradient(90deg,#fff6f6,#fff4f4);border-left:6px solid #ff7b7b}
-  .section-pink{background:linear-gradient(90deg,#fff7f9,#fff3f6);border-left:6px solid #ffb3d6}
-  .section-blue{background:linear-gradient(90deg,#f6faff,#eef8ff);border-left:6px solid #86c8ff}
-  .grid{display:block}
-  .product-row{background:var(--card);padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;margin:10px 0;box-shadow:0 6px 14px rgba(0,0,0,0.03)}
-  .product-left{max-width:75%}
-  .product-left h3{margin:0;font-size:16px;color:#b22222}
-  .product-left small{display:block;color:var(--muted);margin-top:6px}
-  .price{font-weight:800;color:#0b6b0b}
-  footer{margin-top:18px;padding:16px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #f0e0d0}
-  .floating-wh{position:fixed;right:14px;bottom:14px;background:var(--success);color:#fff;padding:14px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.2);z-index:999;display:flex;align-items:center;justify-content:center;text-decoration:none}
-  .pipe-note{font-style:italic;color:#b04a4a}
-  @media(max-width:520px){
-    .product-left{max-width:65%}
-    header h1{font-size:18px}
-  }
+body {
+    font-family: Arial, sans-serif;
+    background: #fff7d1; /* light yellow */
+    margin: 0;
+}
+
+.header {
+    background: linear-gradient(90deg, #ff0000, #ffcc00);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 5px solid #000;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #d10000;
+}
+
+.product-box {
+    background: white;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 10px solid #ff0000;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.product-box h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #008000;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.gpay {
+    width: 80%;
+    margin: 10px auto;
+    background: #0033cc;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🔥 KISHANTH CRACKERS 🔥</h1>
-  <p>Order Online • WhatsApp: 7448489142 • (GPay: suganthiraj9598-1@okaxis)</p>
-</header>
+<div class="header">KISHANTH CRACKERS</div>
 
-<div class="wrap">
+<a class="whatsapp-btn" href="https://wa.me/917448489142">📦 Order on WhatsApp</a>
+<div class="gpay">GPay / UPI : 7448489142</div>
 
-  <div class="checkout-bar">
-    <div class="totals">
-      <div id="countItems">Total Items: 0</div>
-      <div class="big" id="grandTotal">Total Amount: ₹0</div>
-      <div class="note">If any product missing — Contact us on WhatsApp</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
-      <a id="checkoutBtn" class="wh-btn" href="#" onclick="checkout()" style="pointer-events:none;opacity:0.6">📲 Order on WhatsApp — Chat Now</a>
-      <div class="gpay">GPay / UPI: suganthiraj9598-1@okaxis</div>
-    </div>
-  </div>
+<h2 class="section-title">🔥 PRICE LIST 2025 🔥</h2>
 
-  <!-- FLOWER POTS (yellow) -->
-  <div class="section-title section-yellow">
-    <div style="font-size:18px">🌼</div>
-    <div class="title">FLOWER POTS</div>
-  </div>
+<!-- START PRODUCT LIST -->
 
-  <div id="products">
-    <!-- Flower pots -->
-    <div class="product-row">
-      <div class="product-left">
-        <h3>1. Flower Pots Big</h3>
-        <small>1 Box (10pcs)</small>
-      </div>
-      <div class="price">Actual: ₹280 | Offer: ₹70</div>
-    </div>
+<div class="product-box"><h3>1. 2¾" Kuruvi</h3><div class="price">Actual ₹36 | Offer ₹9</div></div>
+<div class="product-box"><h3>2. 3½" Lakshmi</h3><div class="price">Actual ₹60 | Offer ₹15</div></div>
+<div class="product-box"><h3>3. 4" Lakshmi</h3><div class="price">Actual ₹80 | Offer ₹20</div></div>
+<div class="product-box"><h3>4. 4" Gold Lakshmi</h3><div class="price">Actual ₹120 | Offer ₹30</div></div>
+<div class="product-box"><h3>5. 4" Deluxe Lakshmi</h3><div class="price">Actual ₹132 | Offer ₹33</div></div>
+<div class="product-box"><h3>6. 2 Sound Crackers</h3><div class="price">Actual ₹96 | Offer ₹24</div></div>
+<div class="product-box"><h3>7. 3 Sound Crackers</h3><div class="price">Actual ₹124 | Offer ₹31</div></div>
 
-    <div class="product-row">
-      <div class="product-left">
-        <h3>2. Flower Pots Special</h3>
-        <small>1 Box (10pcs)</small>
-      </div>
-      <div class="price">Actual: ₹360 | Offer: ₹90</div>
-    </div>
+<h2 class="section-title">🌸 FLOWER POTS</h2>
 
-    <div class="product-row">
-      <div class="product-left">
-        <h3>3. Flower Pots Asoka</h3>
-        <small>1 Box (10pcs)</small>
-      </div>
-      <div class="price">Actual: ₹520 | Offer: ₹130</div>
-    </div>
+<div class="product-box"><h3>8. Flower Pots Big</h3><div class="price">Actual ₹280 | Offer ₹70</div></div>
+<div class="product-box"><h3>9. Flower Pots Special</h3><div class="price">Actual ₹360 | Offer ₹90</div></div>
+<div class="product-box"><h3>10. Flower Pots Asoka</h3><div class="price">Actual ₹520 | Offer ₹130</div></div>
+<div class="product-box"><h3>11. Flower Pots Deluxe</h3><div class="price">Actual ₹640 | Offer ₹160</div></div>
+<div class="product-box"><h3>12. Flower Pots Color Koti</h3><div class="price">Actual ₹720 | Offer ₹180</div></div>
+<div class="product-box"><h3>13. Mega Tri Color</h3><div class="price">Actual ₹1960 | Offer ₹490</div></div>
 
-    <div class="product-row">
-      <div class="product-left">
-        <h3>4. Flower Pots Deluxe (5pcs)</h3>
-        <small>1 Box</small>
-      </div>
-      <div class="price">Actual: ₹640 | Offer: ₹160</div>
-    </div>
+<h2 class="section-title">🌀 GROUND CHAKKAR</h2>
 
-    <div class="product-row">
-      <div class="product-left">
-        <h3>5. Flower Pots Color Koti</h3>
-        <small>1 Box</small>
-      </div>
-      <div class="price">Actual: ₹720 | Offer: ₹180</div>
-    </div>
+<div class="product-box"><h3>14. Big 10pcs</h3><div class="price">Actual ₹136 | Offer ₹34</div></div>
+<div class="product-box"><h3>15. Asoka</h3><div class="price">Actual ₹236 | Offer ₹59</div></div>
+<div class="product-box"><h3>16. Special</h3><div class="price">Actual ₹340 | Offer ₹85</div></div>
+<div class="product-box"><h3>17. Deluxe</h3><div class="price">Actual ₹540 | Offer ₹135</div></div>
+<div class="product-box"><h3>18. Giant Triple Wheel</h3><div class="price">Actual ₹600 | Offer ₹150</div></div>
+<div class="product-box"><h3>19. Spinner Mega Deluxe</h3><div class="price">Actual ₹676 | Offer ₹169</div></div>
+<div class="product-box"><h3>20. Multi Color Spinner</h3><div class="price">Actual ₹880 | Offer ₹220</div></div>
 
-    <div class="product-row">
-      <div class="product-left">
-        <h3>6. Flower Pots Mega Tri Color</h3>
-        <small>1 Box</small>
-      </div>
-      <div class="price">Actual: ₹1960 | Offer: ₹490</div>
-    </div>
-  </div>
+<h2 class="section-title">💥 SOUND CRACKERS</h2>
+<div class="product-box"><h3>21. Bigili 100pcs</h3><div class="price">Actual ₹192 | Offer ₹48</div></div>
+<div class="product-box"><h3>22. Bigili 50pcs</h3><div class="price">Actual ₹80 | Offer ₹20</div></div>
+<div class="product-box"><h3>23. Bigili Red 100pcs</h3><div class="price">Actual ₹180 | Offer ₹45</div></div>
+<div class="product-box"><h3>24. Bigili Red 50pcs</h3><div class="price">Actual ₹72 | Offer ₹18</div></div>
+<div class="product-box"><h3>25. Basket Bomb 100pcs</h3><div class="price">Actual ₹240 | Offer ₹60</div></div>
+<div class="product-box"><h3>26. Paper Bomb ¼kg</h3><div class="price">Actual ₹220 | Offer ₹55</div></div>
 
-  <!-- GROUND CHAKKAR (red) -->
-  <div class="section-title section-red" style="margin-top:18px">
-    <div style="font-size:18px">🌀</div>
-    <div class="title">GROUND CHAKKAR</div>
-  </div>
+<h2 class="section-title">💣 ATOM BOMB</h2>
+<div class="product-box"><h3>27. Bullet Bomb</h3><div class="price">Actual ₹120 | Offer ₹30</div></div>
+<div class="product-box"><h3>28. Mega Bullet</h3><div class="price">Actual ₹280 | Offer ₹70</div></div>
+<div class="product-box"><h3>29. Hydro Bomb Green</h3><div class="price">Actual ₹320 | Offer ₹80</div></div>
+<div class="product-box"><h3>30. Classic Bomb Green</h3><div class="price">Actual ₹440 | Offer ₹110</div></div>
+<div class="product-box"><h3>31. Jallikattu Ply Bomb</h3><div class="price">Actual ₹760 | Offer ₹190</div></div>
 
-  <div>
-    <div class="product-row">
-      <div class="product-left"><h3>7. Ground Chakkar Big (10pcs)</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹136 | Offer: ₹34</div>
-    </div>
+<!-- END PRODUCT LIST -->
 
-    <div class="product-row">
-      <div class="product-left"><h3>8. Ground Chakkar Asoka</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹236 | Offer: ₹59</div>
-    </div>
-
-    <div class="product-row">
-      <div class="product-left"><h3>9. Ground Chakkar Special</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹340 | Offer: ₹85</div>
-    </div>
-
-    <div class="product-row">
-      <div class="product-left"><h3>10. Ground Chakkar Deluxe</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹540 | Offer: ₹135</div>
-    </div>
-
-    <div class="product-row">
-      <div class="product-left"><h3>11. Giant Triple Wheel</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹600 | Offer: ₹150</div>
-    </div>
-
-    <div class="product-row">
-      <div class="product-left"><h3>12. Spinner Mega Deluxe</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹676 | Offer: ₹169</div>
-    </div>
-
-    <div class="product-row">
-      <div class="product-left"><h3>13. Multi Color Spinner (5pcs)</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹880 | Offer: ₹220</div>
-    </div>
-  </div>
-
-  <!-- SOUND CRACKERS (yellow small section) -->
-  <div class="section-title section-yellow" style="margin-top:18px">
-    <div style="font-size:18px">🔊</div>
-    <div class="title">SOUND CRACKERS</div>
-  </div>
-
-  <div>
-    <div class="product-row">
-      <div class="product-left"><h3>14. 2¾" Kuruvi</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹36 | Offer: ₹9</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>15. 3½" Lakshmi</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹60 | Offer: ₹15</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>16. 4" Lakshmi</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹80 | Offer: ₹20</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>17. 4" Gold Lakshmi</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹120 | Offer: ₹30</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>18. 4" Deluxe Lakshmi</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹132 | Offer: ₹33</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>19. 2 Sound Crackers</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹96 | Offer: ₹24</div>
-    </div>
-
-    <!-- BIGILI & BULK SOUND (red tinted) -->
-    <div style="margin-top:12px" class="section-title section-red">
-      <div style="font-size:18px">🔔</div>
-      <div class="title">BIGILI & BULK SOUND</div>
-    </div>
-
-    <div class="product-row">
-      <div class="product-left"><h3>21. Bigili Cracker Stripped 100pcs</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹192 | Offer: ₹48</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>22. Bigili Cracker Stripped 50pcs</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹80 | Offer: ₹20</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>23. Bigili Cracker Red 100pcs</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹180 | Offer: ₹45</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>24. Bigili Cracker Red 50pcs</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹72 | Offer: ₹18</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>25. Basket Bomb (Olla vedi) - 100pcs</h3><small>1 Pkt</small></div>
-      <div class="price">Actual: ₹240 | Offer: ₹60</div>
-    </div>
-    <div class="product-row">
-      <div class="product-left"><h3>26. Paper Bomb ¼ kg</h3><small>1 Box</small></div>
-      <div class="price">Actual: ₹220 | Offer: ₹55</div>
-    </div>
-  </div>
-
-  <!-- ATOM BOMB -->
-  <div class="section-title section-pink" style="margin-top:18px">
-    <div style="font-size:18px">💣</div>
-    <div class="title">ATOM BOMB</div>
-  </div>
-
-  <div>
-    <div class="product-row"><div class="product-left"><h3>27. Bullet Bomb</h3><small>1 Box</small></div><div class="price">Actual: ₹120 | Offer: ₹30</div></div>
-    <div class="product-row"><div class="product-left"><h3>28. Mega Bullet</h3><small>1 Box</small></div><div class="price">Actual: ₹280 | Offer: ₹70</div></div>
-    <div class="product-row"><div class="product-left"><h3>29. Hydro Bomb Green</h3><small>1 Box</small></div><div class="price">Actual: ₹320 | Offer: ₹80</div></div>
-    <div class="product-row"><div class="product-left"><h3>30. Classic Bomb Green</h3><small>1 Box</small></div><div class="price">Actual: ₹440 | Offer: ₹110</div></div>
-    <div class="product-row"><div class="product-left"><h3>31. Jallikattu 9” Ply Bomb</h3><small>1 Box</small></div><div class="price">Actual: ₹760 | Offer: ₹190</div></div>
-  </div>
-
-  <!-- ROCKETS -->
-  <div class="section-title section-yellow" style="margin-top:18px"><div style="font-size:18px">🚀</div><div class="title">ROCKETS</div></div>
-  <div class="product-row"><div class="product-left"><h3>32. Rocket Bomb</h3><small>1 Box (10pcs)</small></div><div class="price">Actual: ₹600 | Offer: ₹60</div></div>
-  <div class="product-row"><div class="product-left"><h3>33. Mini Sky shot (Black & White)</h3><small>1 Box</small></div><div class="price">Actual: ₹1900 | Offer: ₹190</div></div>
-
-  <!-- KIDS -->
-  <div class="section-title section-blue" style="margin-top:18px"><div style="font-size:18px">👶</div><div class="title">KIDS FANCY NOVELTIES</div></div>
-  <div class="product-row"><div class="product-left"><h3>34. Money in the Bank</h3><small>1 Box (3pcs)</small></div><div class="price">Actual: ₹1200 | Offer: ₹120</div></div>
-  <div class="product-row"><div class="product-left"><h3>35. Magizh Heist (Money Bank)</h3><small>1 Box (2pcs)</small></div><div class="price">Actual: ₹1800 | Offer: ₹180</div></div>
-
-  <!-- FANCY FOUNTAINS -->
-  <div class="section-title section-pink" style="margin-top:18px"><div style="font-size:18px">✨</div><div class="title">FANCY FOUNTAINS</div></div>
-  <div class="product-row"><div class="product-left"><h3>36. Water fall Pencil</h3><small>1 Box (5pcs)</small></div><div class="price">Actual: ₹2200 | Offer: ₹220</div></div>
-  <div class="product-row"><div class="product-left"><h3>37. Pop Corn Pencil</h3><small>1 Box (5pcs)</small></div><div class="price">Actual: ₹2200 | Offer: ₹220</div></div>
-
-  <!-- SKY SHOT SINGLE -->
-  <div class="section-title section-yellow" style="margin-top:18px"><div style="font-size:18px">🌌</div><div class="title">SKY SHOT (SINGLE)</div></div>
-  <div class="product-row"><div class="product-left"><h3>38. Sky shot - Chotta Fancy</h3><small>1 Box</small></div><div class="price">Actual: ₹350 | Offer: ₹35</div></div>
-  <div class="product-row"><div class="product-left"><h3>39. 3 Pcs Comet</h3><small>1 Box (3pcs)</small></div><div class="price">Actual: ₹2500 | Offer: ₹250</div></div>
-
-  <!-- WHISTLING -->
-  <div class="section-title section-yellow" style="margin-top:18px"><div style="font-size:18px">🎵</div><div class="title">WHISTLING SERIES</div></div>
-  <div class="product-row"><div class="product-left"><h3>40. Twinkling Star 4 inch</h3><small>1 Box</small></div><div class="price">Actual: ₹600 | Offer: ₹60</div></div>
-
-  <!-- BRANDED SPARKLERS -->
-  <div class="section-title section-pink" style="margin-top:18px"><div style="font-size:18px">✨</div><div class="title">BRANDED SPARKLERS</div></div>
-  <div class="product-row"><div class="product-left"><h3>41. 12cm Electric Sparklers</h3><small>1 Box (10pcs)</small></div><div class="price">Actual: ₹200 | Offer: ₹20</div></div>
-  <div class="product-row"><div class="product-left"><h3>42. 15cm Electric Sparklers</h3><small>1 Box (10pcs)</small></div><div class="price">Actual: ₹350 | Offer: ₹35</div></div>
-
-  <!-- PIPE SERIES (no fixed price) -->
-  <div class="section-title section-yellow" style="margin-top:18px"><div style="font-size:18px">🔧</div><div class="title">PIPE SERIES</div></div>
-  <div class="product-row"><div class="product-left"><h3>• 3 inch Pipe</h3><small class="pipe-note">Rates change daily — Contact for today's price</small></div><div class="price">—</div></div>
-  <div class="product-row"><div class="product-left"><h3>• 3 Pcs Fancy Pipe</h3><small class="pipe-note">Rates change daily — Contact for today's price</small></div><div class="price">—</div></div>
-  <div class="product-row"><div class="product-left"><h3>• 4 inch Pipe</h3><small class="pipe-note">Rates change daily — Contact for today's price</small></div><div class="price">—</div></div>
-
-  <div style="margin-top:12px;font-size:13px;color:var(--muted)">
-    <strong>More products / Gift box / Special matches / Electric sparkles etc —</strong> If anything missing, contact on WhatsApp and we'll add immediately.
-  </div>
-
+<div class="footer">
+Owner: Prashanth<br>
+3/61 South Street, Vembakottai<br>
+📞 WhatsApp: 7448489142
 </div>
-
-<footer>
-  <div>Owner: Prashanth • WhatsApp: 7448489142 • Address: 3/61, South Street, Vembakottai</div>
-  <div style="margin-top:8px">© <span id="year"></span> Kishanth Crackers</div>
-</footer>
-
-<a class="floating-wh" id="floatBtn" href="https://wa.me/9174489142" title="Order on WhatsApp">💬</a>
-
-<script>
-document.getElementById('year').innerText = new Date().getFullYear();
-// simple placeholders (no cart logic) — you can keep as price-list page
-document.getElementById('floatBtn').addEventListener('click', function(e){ e.preventDefault(); window.open(this.href,'_blank'); });
-function checkout(){ window.open('https://wa.me/9174489142?text='+encodeURIComponent('Hello, I want to order. Please assist.'),'_blank'); }
-</script>
 
 </body>
 </html>
