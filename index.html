@@ -1,376 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ta">
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>KISHANTH CRACKERS — Vembakottai</title>
-<meta name="description" content="Kishanth Crackers - Order Online. WhatsApp: 7448489142. GPay: suganthiraj9598-1@okaxis" />
+<title>KISHANTH CRACKERS – GALLERY</title>
+
 <style>
-  :root{
-    --bg:#fff7ec;
-    --card:#fff;
-    --red:#ff3b2f;
-    --yellow:#ffd24d;
-    --muted:#6b6b6b;
-    --accent:#b22222;
-    --success:#25D366;
-    --maxw:1100px;
-    --glass: rgba(255,255,255,0.6);
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;font-family:Arial,system-ui,"Noto Sans Tamil",sans-serif;background:var(--bg);color:#111;height:100%}
-  a{color:inherit}
-  /* Header */
-  header{background:linear-gradient(90deg,var(--red),var(--yellow));padding:14px 12px;position:sticky;top:0;z-index:60;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
-  .brand{max-width:var(--maxw);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .brand h1{margin:0;font-size:20px;letter-spacing:1px;font-weight:900;color:#fff}
-  .brand .meta{font-weight:800;color:#111;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:8px}
-  /* Banner */
-  .banner{max-width:var(--maxw);margin:14px auto;padding:18px;border-radius:12px;text-align:center;background:linear-gradient(90deg,#fff8e6,#fff2d4);border:6px solid #ffd34d;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
-  .banner h2{margin:0;font-size:26px;color:var(--accent);font-weight:900}
-  .banner p{margin:8px 0 0;color:var(--muted)}
-  /* Controls */
-  .wrap{max-width:var(--maxw);margin:16px auto;padding:12px}
-  .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-  .search{flex:1;min-width:220px}
-  .search input{width:100%;padding:12px;border-radius:10px;border:1px solid #efe1c0;background:#fff;font-size:15px}
-  .chips{display:flex;gap:8px;flex-wrap:wrap}
-  .chip{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;font-weight:800}
-  .chip.active{background:linear-gradient(90deg,var(--yellow),#fff3b8);box-shadow:0 8px 26px rgba(0,0,0,0.06)}
-  .gpay{padding:8px 12px;background:#041f6b;color:var(--yellow);border-radius:8px;font-weight:800}
-  /* Grid */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:14px}
-  .card{background:var(--card);border-radius:12px;padding:12px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 18px rgba(0,0,0,0.03);display:flex;flex-direction:column;gap:8px}
-  .card img{width:100%;height:160px;object-fit:cover;border-radius:8px;background:#eee}
-  .card h3{margin:0;font-size:16px;color:var(--accent);font-weight:800}
-  .card small{color:var(--muted)}
-  .row-foot{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .price{font-weight:900;color:#0b6b0b}
-  .off{background:var(--red);color:#fff;padding:4px 8px;border-radius:8px;font-weight:900;font-size:12px}
-  .qty{display:flex;gap:6px;align-items:center}
-  .qty button{padding:6px 10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer;font-weight:900}
-  .qty input{width:58px;padding:8px;border-radius:8px;border:1px solid #eee;text-align:center}
-  /* Cart drawer */
-  .cart-drawer{position:fixed;right:0;top:0;height:100%;width:340px;background:#fff;box-shadow:-8px 0 30px rgba(0,0,0,0.2);z-index:999;transform:translateX(110%);transition:transform .28s ease;display:flex;flex-direction:column}
-  .cart-drawer.open{transform:translateX(0)}
-  .cart-head{padding:14px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
-  .cart-body{padding:12px;flex:1;overflow:auto}
-  .cart-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #f0f0f0}
-  .cart-footer{padding:12px;border-top:1px solid #eee}
-  .checkout-btn{background:var(--success);color:#fff;border:none;padding:12px 14px;border-radius:8px;font-weight:900;width:100%;cursor:pointer}
-  /* Small helpers */
-  .note{font-size:13px;color:var(--muted)}
-  footer{margin-top:18px;padding:20px;text-align:center;color:var(--muted);font-size:14px}
-  /* Floating */
-  .float-wh{position:fixed;right:14px;bottom:14px;background:var(--success);color:#fff;padding:14px;border-radius:50%;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:1000}
-  .float-cart{position:fixed;left:14px;bottom:14px;background:#fff;padding:10px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);display:flex;gap:8px;align-items:center;z-index:1000}
-  .float-cart button{background:var(--red);color:#fff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:900}
-  /* Modal */
-  .modal{position:fixed;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:1100;opacity:0;pointer-events:none;transition:opacity .18s}
-  .modal.show{opacity:1;pointer-events:auto}
-  .modal-card{background:#fff;padding:16px;border-radius:10px;width:420px;max-width:95%}
-  .form-row{display:flex;gap:8px;margin-top:8px}
-  .form-row input,.form-row textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #eee}
-  /* Admin small box */
-  .admin-btn{position:fixed;right:14px;top:14px;background:#000;color:#fff;padding:8px;border-radius:8px;z-index:1200;cursor:pointer}
-  @media(max-width:720px){
-    .card img{height:120px}
-    .grid{gap:10px}
-    .cart-drawer{width:100%}
-  }
+    body {
+        font-family: Arial, sans-serif;
+        background:#000;
+        margin:0;
+        padding:0;
+        color:#fff;
+    }
+    .header {
+        background:#ff0000;
+        background:linear-gradient(45deg,#ff0000,#ffd100);
+        padding:20px;
+        text-align:center;
+        font-size:30px;
+        font-weight:bold;
+        letter-spacing:2px;
+    }
+    .sub {
+        text-align:center;
+        font-size:16px;
+        margin-top:5px;
+        color:#ffd100;
+    }
+    .grid {
+        display:grid;
+        grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+        gap:10px;
+        padding:15px;
+    }
+    .grid img {
+        width:100%;
+        height:150px;
+        object-fit:cover;
+        border-radius:8px;
+        border:2px solid #333;
+        background:#111;
+    }
 </style>
 </head>
+
 <body>
 
-<!-- Header -->
-<header>
-  <div class="brand">
-    <div>
-      <h1>🔥 KISHANTH CRACKERS 🔥</h1>
-      <div style="margin-top:6px"><strong>📞</strong> 7448489142 &nbsp;&nbsp; <strong>GPay:</strong> suganthiraj9598-1@okaxis</div>
-    </div>
-    <div class="meta">Wholesale & Retail • Delivery Available</div>
-  </div>
-</header>
+<div class="header">KISHANTH CRACKERS</div>
+<div class="sub">🔥 Uploaded Photos Will Show Here Automatically 🔥</div>
 
-<!-- Banner -->
-<div class="banner">
-  <h2>வெம்பகொட்டை — Kishanth Crackers</h2>
-  <p>Festival Special • Red & Yellow Theme • Order on WhatsApp — Fast Delivery</p>
-</div>
-
-<!-- Controls -->
-<div class="wrap">
-  <div class="controls">
-    <div class="search"><input id="searchBox" placeholder="Search products (Lakshmi, Flower, Rocket...)" /></div>
-    <div class="chips" id="chipRow">
-      <div class="chip active" data-cat="All" onclick="setCategory('All')">All</div>
-      <div class="chip" data-cat="Flower" onclick="setCategory('Flower')">Flower Pots</div>
-      <div class="chip" data-cat="Chakkar" onclick="setCategory('Chakkar')">Chakkar</div>
-      <div class="chip" data-cat="Sound" onclick="setCategory('Sound')">Sound</div>
-      <div class="chip" data-cat="Bigili" onclick="setCategory('Bigili')">Bigili</div>
-      <div class="chip" data-cat="Atom" onclick="setCategory('Atom')">Atom Bomb</div>
-      <div class="chip" data-cat="Rockets" onclick="setCategory('Rockets')">Rockets</div>
-      <div class="chip" data-cat="Kids" onclick="setCategory('Kids')">Kids</div>
-      <div class="chip" data-cat="Fountain" onclick="setCategory('Fountain')">Fountains</div>
-      <div class="chip" data-cat="Sky" onclick="setCategory('Sky')">Sky Shot</div>
-      <div class="chip" data-cat="Whistle" onclick="setCategory('Whistle')">Whistling</div>
-      <div class="chip" data-cat="Sparklers" onclick="setCategory('Sparklers')">Sparklers</div>
-      <div class="chip" data-cat="Pipe" onclick="setCategory('Pipe')">Pipe Series</div>
-    </div>
-    <div class="gpay">GPay: suganthiraj9598-1@okaxis</div>
-  </div>
-
-  <!-- Product grid -->
-  <div class="grid" id="productGrid"></div>
-
-  <div style="margin-top:12px" class="note">
-    🔔 <strong>Note:</strong> Pipe series rates change daily — contact on WhatsApp for today's price. If any product missing or rate changed, message and we will update immediately.
-  </div>
-</div>
-
-<!-- Floating buttons -->
-<a class="float-wh" id="whFloat" href="https://wa.me/917448489142" title="WhatsApp">💬</a>
-<div class="float-cart" id="cartFloat">
-  <div id="cartCount" style="font-weight:800">Items: 0 | ₹0</div>
-  <button onclick="toggleCart()">Cart</button>
-</div>
-
-<!-- Cart drawer -->
-<div class="cart-drawer" id="cartDrawer" aria-hidden="true">
-  <div class="cart-head">
-    <div style="font-weight:900">Your Cart</div>
-    <div><button onclick="toggleCart()" style="background:#fff;border:1px solid #eee;padding:6px;border-radius:8px;cursor:pointer">Close</button></div>
-  </div>
-  <div class="cart-body" id="cartBody">
-    <!-- items -->
-  </div>
-  <div class="cart-footer">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <div style="font-weight:800">Total:</div>
-      <div id="cartTotal" style="font-weight:900">₹0</div>
-    </div>
-    <div style="display:flex;gap:8px">
-      <button class="checkout-btn" onclick="openCheckoutModal()">Checkout</button>
-      <button style="padding:10px;border-radius:8px;border:1px solid #eee;background:#fff;cursor:pointer" onclick="clearCart()">Clear</button>
-    </div>
-  </div>
-</div>
-
-<!-- Checkout Modal -->
-<div class="modal" id="checkoutModal">
-  <div class="modal-card">
-    <h3 style="margin:0">Checkout — Delivery Details</h3>
-    <div class="form-row" style="margin-top:12px">
-      <input id="custName" placeholder="பெயர் (Name)" />
-    </div>
-    <div class="form-row" style="margin-top:8px">
-      <input id="custPhone" placeholder="Phone (10 digits)" />
-    </div>
-    <div class="form-row" style="margin-top:8px">
-      <textarea id="custAddr" placeholder="முகவரி / Delivery address" rows="3"></textarea>
-    </div>
-    <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
-      <button onclick="closeCheckoutModal()" style="padding:8px;border-radius:8px;border:1px solid #eee;background:#fff">Cancel</button>
-      <button onclick="submitOrder()" style="padding:8px;border-radius:8px;background:var(--success);color:#fff;border:none;font-weight:900">Send to WhatsApp</button>
-    </div>
-  </div>
-</div>
-
-<!-- Admin quick button (small) -->
-<div class="admin-btn" id="adminBtn" title="Admin">Admin</div>
-
-<!-- Admin modal -->
-<div class="modal" id="adminModal">
-  <div class="modal-card">
-    <h3>Admin — Quick Edit</h3>
-    <div class="note">Simple local editor (not secure). Password: <strong>kishanth123</strong></div>
-    <div class="form-row" style="margin-top:8px">
-      <input id="adminPass" type="password" placeholder="Admin password" />
-      <button onclick="adminLogin()">Login</button>
-    </div>
-    <div id="adminPanel" style="display:none;margin-top:12px">
-      <div style="font-weight:800">Edit product (select then edit price)</div>
-      <select id="adminSelect" style="width:100%;padding:8px;margin-top:8px;border-radius:8px">
-      </select>
-      <div class="form-row" style="margin-top:8px">
-        <input id="adminOffer" placeholder="Offer price (number)" />
-        <input id="adminActual" placeholder="Actual price (number)" />
-      </div>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        <button onclick="adminSave()">Save</button>
-        <button onclick="adminClose()">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div>Owner: Prashanth • WhatsApp: <strong>7448489142</strong> • Address: <strong>3/61, South Street, Vembakottai</strong></div>
-  <div style="margin-top:8px">© <span id="year"></span> Kishanth Crackers</div>
-</footer>
+<div class="grid" id="gallery"></div>
 
 <script>
-/* ---------------------------
-   Products data (from price lists)
-   Each product: id, cat, name, pack, actual, offer, imgSeed
-   If imgSeed omitted, no image.
-   --------------------------- */
-const products = [
-  {id:'p1', cat:'Flower', name:'Flower Pots Big', pack:'1 Box (10pcs)', actual:280, offer:70, img:'fountain'},
-  {id:'p2', cat:'Flower', name:'Flower Pots Special', pack:'1 Box (10pcs)', actual:360, offer:90, img:'colorful fountain'},
-  {id:'p3', cat:'Flower', name:'Flower Pots Asoka', pack:'1 Box', actual:520, offer:130, img:'asoka'},
-  {id:'p4', cat:'Flower', name:'Flower Pots Deluxe (5pcs)', pack:'1 Box', actual:640, offer:160, img:'deluxe fountain'},
-  {id:'p5', cat:'Flower', name:'Flower Pots Color Koti', pack:'1 Box', actual:720, offer:180, img:'color'},
-  {id:'p6', cat:'Flower', name:'Flower Pots Mega Tri Color', pack:'1 Box', actual:1960, offer:490, img:'tri color'},
+async function loadImages() {
+    const folder = "images/";
+    const response = await fetch(folder);
+    const text = await response.text();
 
-  {id:'p7', cat:'Chakkar', name:'Ground Chakkar Big (10pcs)', pack:'1 Box', actual:136, offer:34, img:'chakkar'},
-  {id:'p8', cat:'Chakkar', name:'Ground Chakkar Asoka', pack:'1 Box', actual:236, offer:59, img:'asoka wheel'},
-  {id:'p9', cat:'Chakkar', name:'Ground Chakkar Special', pack:'1 Box', actual:340, offer:85, img:'spin'},
-  {id:'p10', cat:'Chakkar', name:'Ground Chakkar Deluxe', pack:'1 Box', actual:540, offer:135, img:'deluxe wheel'},
-  {id:'p11', cat:'Chakkar', name:'Giant Triple Wheel', pack:'1 Box', actual:600, offer:150, img:'triple wheel'},
-  {id:'p12', cat:'Chakkar', name:'Spinner Mega Deluxe', pack:'1 Box', actual:676, offer:169, img:'spinner'},
-  {id:'p13', cat:'Chakkar', name:'Multi Color Spinner (5pcs)', pack:'1 Box', actual:880, offer:220, img:'multi color'},
+    const gallery = document.getElementById("gallery");
+    const regex = /href="(.*?)"/g;
 
-  {id:'p14', cat:'Sound', name:'2¾" Kuruvi', pack:'1 Pkt', actual:36, offer:9, img:'kuruvi'},
-  {id:'p15', cat:'Sound', name:'3½" Lakshmi', pack:'1 Pkt', actual:60, offer:15, img:'lakshmi'},
-  {id:'p16', cat:'Sound', name:'4" Lakshmi', pack:'1 Pkt', actual:80, offer:20, img:'lakshmi fireworks'},
-  {id:'p17', cat:'Sound', name:'4" Gold Lakshmi', pack:'1 Pkt', actual:120, offer:30, img:'gold'},
-  {id:'p18', cat:'Sound', name:'4" Deluxe Lakshmi', pack:'1 Pkt', actual:132, offer:33, img:'deluxe'},
-  {id:'p19', cat:'Sound', name:'2 Sound Crackers', pack:'1 Pkt', actual:96, offer:24, img:'sound'},
-  {id:'p20', cat:'Sound', name:'3 Sound Crackers', pack:'1 Pkt', actual:124, offer:31, img:'sound2'},
+    let m;
+    let images = [];
 
-  {id:'p21', cat:'Bigili', name:'Bigili Stripped 100pcs', pack:'1 Pkt', actual:192, offer:48, img:'bigili'},
-  {id:'p22', cat:'Bigili', name:'Bigili Stripped 50pcs', pack:'1 Pkt', actual:80, offer:20, img:'bigili2'},
-  {id:'p23', cat:'Bigili', name:'Bigili Red 100pcs', pack:'1 Pkt', actual:180, offer:45, img:'red bigili'},
-  {id:'p24', cat:'Bigili', name:'Bigili Red 50pcs', pack:'1 Pkt', actual:72, offer:18, img:'red2'},
-  {id:'p25', cat:'Bigili', name:'Basket Bomb (Olla Vedi) - 100pcs', pack:'1 Pkt', actual:240, offer:60, img:'basket-bomb'},
-  {id:'p26', cat:'Bigili', name:'Paper Bomb ¼ kg', pack:'1 Box', actual:220, offer:55, img:'paper-bomb'},
+    while ((m = regex.exec(text)) !== null) {
+        if (m[1].match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
+            images.push(m[1]);
+        }
+    }
 
-  {id:'p27', cat:'Atom', name:'Bullet Bomb', pack:'1 Box', actual:120, offer:30, img:'bullet'},
-  {id:'p28', cat:'Atom', name:'Mega Bullet', pack:'1 Box', actual:280, offer:70, img:'mega'},
-  {id:'p29', cat:'Atom', name:'Hydro Bomb Green', pack:'1 Box', actual:320, offer:80, img:'hydro'},
-  {id:'p30', cat:'Atom', name:'Classic Bomb Green', pack:'1 Box', actual:440, offer:110, img:'classic'},
-  {id:'p31', cat:'Atom', name:'Jallikattu 9” Ply Bomb', pack:'1 Box', actual:760, offer:190, img:'jalli'},
-
-  {id:'p32', cat:'Rockets', name:'Rocket Bomb', pack:'1 Box (10pcs)', actual:600, offer:60, img:'rocket'},
-  {id:'p33', cat:'Rockets', name:'Mini Sky shot (Black & White)', pack:'1 Box', actual:1900, offer:190, img:'skyshot'},
-
-  {id:'p34', cat:'Kids', name:'Money in the Bank', pack:'1 Box (3pcs)', actual:1200, offer:120, img:'money'},
-  {id:'p35', cat:'Kids', name:'Magizh Heist (Money Bank)', pack:'1 Box (2pcs)', actual:1800, offer:180, img:'magizh'},
-
-  {id:'p36', cat:'Fountain', name:'Water fall Pencil', pack:'1 Box (5pcs)', actual:2200, offer:220, img:'waterfall'},
-  {id:'p37', cat:'Fountain', name:'Pop Corn Pencil', pack:'1 Box (5pcs)', actual:2200, offer:220, img:'popcorn'},
-
-  {id:'p38', cat:'Sky', name:'Sky shot - Chotta Fancy', pack:'1 Box', actual:350, offer:35, img:'chotta sky'},
-  {id:'p39', cat:'Sky', name:'3 Pcs Comet', pack:'1 Box (3pcs)', actual:2500, offer:250, img:'comet'},
-
-  {id:'p40', cat:'Whistle', name:'Twinkling Star 4 inch', pack:'1 Box', actual:600, offer:60, img:'twinkling'},
-
-  {id:'p41', cat:'Sparklers', name:'12cm Electric Sparklers (10pcs)', pack:'1 Box', actual:200, offer:20, img:'sparklers'},
-  {id:'p42', cat:'Sparklers', name:'15cm Electric Sparklers (10pcs)', pack:'1 Box', actual:350, offer:35, img:'15cm'},
-
-  {id:'p43', cat:'Pipe', name:'3 inch Pipe', pack:'—', actual:null, offer:null, img:'pipe3'},
-  {id:'p44', cat:'Pipe', name:'3 Pcs Fancy Pipe', pack:'—', actual:null, offer:null, img:'pipe3f'},
-  {id:'p45', cat:'Pipe', name:'4 inch Pipe', pack:'—', actual:null, offer:null, img:'pipe4'}
-];
-
-/* ---------------------------
-   Utilities
-   --------------------------- */
-// safe rupee formatting digit-by-digit (per instruction)
-function formatRupee(n){
-  if(n===null||n===undefined) return '—';
-  const s = Math.round(n).toString().split('').reverse().join('');
-  const parts = [];
-  for(let i=0;i<s.length;i++){
-    parts.push(s[i]);
-    if(i===2 || (i>2 && (i-2)%2===1)) parts.push(',');
-  }
-  return '₹' + parts.join('').split('').reverse().join('').replace(/^,/, '');
+    images.forEach(img => {
+        const el = document.createElement("img");
+        el.src = folder + img;
+        gallery.appendChild(el);
+    });
 }
 
-/* ---------------------------
-   Build product grid
-   --------------------------- */
-const grid = document.getElementById('productGrid');
-const cart = {}; // id -> qty
+loadImages();
+</script>
 
-function getImgUrl(seed){
-  if(!seed) return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="100%" height="100%" fill="%23eee"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23999" font-size="22">No Image</text></svg>';
-  const q = encodeURIComponent(seed + ' fireworks packaging');
-  // Using unsplash random query with seed to vary
-  return `https://source.unsplash.com/800x600/?${q}&sig=${encodeURIComponent(seed)}`;
-}
-
-function buildGrid(){
-  grid.innerHTML = '';
-  products.forEach(p=>{
-    const card = document.createElement('div');
-    card.className = 'card';
-    // image
-    const img = document.createElement('img');
-    img.src = getImgUrl(p.img);
-    img.alt = p.name;
-    card.appendChild(img);
-    // title
-    const h = document.createElement('h3');
-    h.innerText = p.name;
-    card.appendChild(h);
-    const s = document.createElement('small');
-    s.innerText = p.pack;
-    card.appendChild(s);
-    // price and controls
-    const foot = document.createElement('div');
-    foot.className = 'row-foot';
-    const price = document.createElement('div');
-    price.className = 'price';
-    price.innerText = p.actual ? (formatRupee(p.offer) + ' (MRP ' + formatRupee(p.actual) + ')') : 'Rates change daily';
-    foot.appendChild(price);
-    const ctl = document.createElement('div');
-    ctl.className = 'qty';
-    const btnMinus = document.createElement('button');
-    btnMinus.innerText = '−';
-    btnMinus.onclick = ()=> changeCart(p.id, -1);
-    const inp = document.createElement('input');
-    inp.type = 'number'; inp.min = 0; inp.value = cart[p.id] || 0;
-    inp.id = 'i_' + p.id;
-    inp.oninput = ()=> setQtyFromInput(p.id);
-    const btnPlus = document.createElement('button');
-    btnPlus.innerText = '+';
-    btnPlus.onclick = ()=> changeCart(p.id, 1);
-    ctl.appendChild(btnMinus); ctl.appendChild(inp); ctl.appendChild(btnPlus);
-    foot.appendChild(ctl);
-    card.appendChild(foot);
-    grid.appendChild(card);
-  });
-}
-buildGrid();
-
-/* ---------------------------
-   Cart functions
-   --------------------------- */
-function changeCart(id, delta){
-  const cur = Number(cart[id]||0) + delta;
-  cart[id] = Math.max(0, cur);
-  document.getElementById('i_'+id).value = cart[id];
-  refreshCartUI();
-}
-function setQtyFromInput(id){
-  const v = Number(document.getElementById('i_'+id).value) || 0;
-  cart[id] = Math.max(0, v);
-  refreshCartUI();
-}
-function refreshCartUI(){
-  // build cart drawer items
-  const body = document.getElementById('cartBody');
-  body.innerHTML = '';
-  let total = 0, items = 0;
-  Object.keys(cart).forEach(id=>{
-    const q = Number(cart[id]||0);
-    if(q<=0) return;
-    const p = products.find(x=> x.id===id);
-    const row = document.createElement('div');
-    row.className = 'cart-item';
-    const left = document.createElement('div');
-    left.innerHTML = `<div style="font-weight:800">${p.name}</di
+</body>
+</html>
