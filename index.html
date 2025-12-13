@@ -1,263 +1,137 @@
-<!DOCTYPE html>
-<html lang="ta">
+<!DOCTYPE html><html lang="ta">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kishanth Crackers</title>
-
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kishanth Crackers</title>  <style>
     body {
-        font-family: Arial, sans-serif;
-        background: #fff6e3;
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7e6;
     }
 
     header {
-        background: #ffcc80;
-        padding: 20px;
-        font-size: 18px;
-        line-height: 25px;
-        color: #7a3000;
-        font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      background: #ffcc00;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .title {
-        font-size: 30px;
-        color: #c62828;
+    header h1 {
+      margin: 0;
+      color: #b30000;
+      font-size: 32px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #333;
     }
 
     h2 {
-        font-size: 28px;
-        margin: 20px;
-        font-weight: bold;
-        color: #333;
+      text-align: center;
+      margin: 20px 0 10px;
+      color: #b30000;
     }
 
     .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-        gap: 15px;
-        padding: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 15px;
     }
 
     .card {
-        background: white;
-        padding: 15px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
 
-    img {
-        width: 100%;
-        height: 120px;
-        object-fit: contain;
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+
+    .card h4 {
+      margin: 8px 0 4px;
+      font-size: 15px;
     }
 
     .price {
-        color: red;
-        font-weight: bold;
-        margin: 8px 0;
+      color: red;
+      font-weight: bold;
+      margin: 4px 0;
     }
 
     button {
-        background: #4caf50;
-        color: white;
-        padding: 8px 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 16px;
-        cursor: pointer;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
     }
-</style>
 
-</head>
-<body>
-
-<header>
-    <span class="title">🔥 Kishanth Crackers</span><br>
-    Owner: Prashanth • Vembakottai<br>
-    WhatsApp: 7448489142 • UPI: suganthiraj9598-1@okaxis
-</header>
-
-<h2>Sound Crackers</h2>
-
-<div class="container">
-
-    <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
-        <h4>2 3/4" Kuruvi</h4>
-        <p class="price">₹36 (₹9 1pkt)</p>
-        <button>Order</button>
-    </div>
-
-    <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055183.png">
-        <h4>3 1/2" Lakshmi crackers</h4>
-        <p class="price">₹60 (₹15 1pkt)</p>
-        <button>Order</button>
-    </div>
-
-    <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055183.png">
-        <h4>4" Lakshmi crackers</h4>
-        <p class="price">₹80 (₹20 1pkt)</p>
-        <button>Order</button>
-    </div>
-
-    <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055183.png">
-        <h4>4" Gold Lakshmi crackers</h4>
-        <p class="price">₹120 (₹30 1pkt)</p>
-        <button>Order</button>
-    </div>
-
-</div><h2>Flower Pots</h2>
-
-<div class="container">
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/482/482742.png">
-    <h4>Flower Pots Big</h4>
-    <p class="price">₹280 (₹70 1 box)</p>
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  </style></head><body><header>
+  <h1>🎆 Kishanth Crackers 🎆</h1>
+  <p>Owner: Prashanth | Vembakottai</p>
+  <p>WhatsApp: 7448894142</p>
+</header><h2>🔥 Sound Crackers 🔥</h2>
+<div class="container">  <div class="card">
+    <img src="https://i.imgur.com/7QZ6F8F.png">
+    <h4>2¾" Kuruvi</h4>
+    <p class="price">₹36 (₹9 / pkt)</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/482/482742.png">
-    <h4>Flower Pots Special</h4>
-    <p class="price">₹360 (₹90 1 box)</p>
+  </div>  <div class="card">
+    <img src="https://i.imgur.com/VXH0yN0.png">
+    <h4>3½" Lakshmi</h4>
+    <p class="price">₹60 (₹15 / pkt)</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/482/482742.png">
-    <h4>Flower Pots Asoka</h4>
-    <p class="price">₹520 (₹130 1 box)</p>
+  </div>  <div class="card">
+    <img src="https://i.imgur.com/VXH0yN0.png">
+    <h4>4" Lakshmi</h4>
+    <p class="price">₹80 (₹20 / pkt)</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/482/482742.png">
-    <h4>Flower Pots Deluxe (5 pcs)</h4>
-    <p class="price">₹640 (₹160 1 box)</p>
+  </div>  <div class="card">
+    <img src="https://i.imgur.com/VXH0yN0.png">
+    <h4>4" Gold Lakshmi</h4>
+    <p class="price">₹120 (₹30 / pkt)</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/482/482742.png">
-    <h4>Flower Pots Color Koti</h4>
-    <p class="price">₹720 (₹180 1 box)</p>
+  </div></div><h2>🎇 Flower Pots 🎇</h2>
+<div class="container">  <div class="card">
+    <img src="https://i.imgur.com/Z0RZ6fE.png">
+    <h4>Small Flower Pot</h4>
+    <p class="price">₹90</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/482/482742.png">
-    <h4>Flower Pots Mega Tri Color</h4>
-    <p class="price">₹1960 (₹490 1 box)</p>
+  </div>  <div class="card">
+    <img src="https://i.imgur.com/Z0RZ6fE.png">
+    <h4>Big Flower Pot</h4>
+    <p class="price">₹180</p>
     <button>Order</button>
-  </div>
-
-</div><h2>Ground Chakkar</h2>
-<div class="container">
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
-    <h4>Ground Chakkar Big (10pcs)</h4>
-    <p class="price">₹136 (₹34 1box)</p>
+  </div></div><h2>🎆 Fancy Crackers 🎆</h2>
+<div class="container">  <div class="card">
+    <img src="https://i.imgur.com/6YQZKQz.png">
+    <h4>Chakkar Big</h4>
+    <p class="price">₹120</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
-    <h4>Ground Chakkar Asoka</h4>
-    <p class="price">₹236 (₹59 1box)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
-    <h4>Ground Chakkar Special</h4>
-    <p class="price">₹340 (₹85 1box)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
+  </div>  <div class="card">
+    <img src="https://i.imgur.com/6YQZKQz.png">
     <h4>Ground Chakkar Deluxe</h4>
-    <p class="price">₹540 (₹135 1box)</p>
+    <p class="price">₹250</p>
     <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
-    <h4>Giant Triple Wheel</h4>
-    <p class="price">₹600 (₹150 1box)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
-    <h4>Spinner Mega Deluxe</h4>
-    <p class="price">₹676 (₹169 1box)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png">
-    <h4>Multi Color Spinner (5pcs)</h4>
-    <p class="price">₹880 (₹220 1box)</p>
-    <button>Order</button>
-  </div>
-
-</div><h2>Sound Crackers</h2>
-<div class="container">
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/1699/1699164.png">
-    <h4>Bigili Cracker Stripped (100pcs)</h4>
-    <p class="price">₹192 (₹48 1pkt)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/1699/1699164.png">
-    <h4>Bigili Cracker Stripped (50pcs)</h4>
-    <p class="price">₹80 (₹20 1pkt)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/1699/1699164.png">
-    <h4>Bigili Cracker Red (100pcs)</h4>
-    <p class="price">₹180 (₹45 1pkt)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/1699/1699164.png">
-    <h4>Bigili Cracker Red (50pcs)</h4>
-    <p class="price">₹72 (₹18 1pkt)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png">
-    <h4>Basket Bomb (Olla Vedi) – 100pcs</h4>
-    <p class="price">₹240 (₹60 1pkt)</p>
-    <button>Order</button>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png">
-    <h4>Paper Bomb (1/4 kg)</h4>
-    <p class="price">₹220 (₹55 1box)</p>
-    <button>Order</button>
-  </div>
-
-</div>
-
-</body>
+  </div></div><footer>
+  © 2025 Kishanth Crackers | Wholesale & Retail
+</footer></body>
 </html>
